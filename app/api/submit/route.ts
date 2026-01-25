@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
         }
 
         // GitHub repository info
-        const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'sickn33';
-        const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME || 'antigravity-awesome-skills';
+        const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'bodhi584';
+        const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME || 'skills-directory';
         const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
         if (!GITHUB_TOKEN) {
