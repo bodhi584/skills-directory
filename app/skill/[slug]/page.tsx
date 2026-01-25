@@ -139,16 +139,16 @@ export default async function SkillPage({ params }: PageProps) {
     const isAntigravitySkill = skill.author_github?.includes('antigravity-awesome-skills');
 
     return (
-        <div className="min-h-screen py-16">
+        <div className="min-h-screen py-16 bg-white dark:bg-[#0f0f0f] transition-colors">
             <div className="max-w-3xl mx-auto px-6">
                 {/* Breadcrumb */}
                 <nav className="mb-8 text-sm">
                     <ol className="flex items-center gap-2 text-gray-400">
-                        <li><Link href="/" className="hover:text-gray-900 transition-colors">Home</Link></li>
-                        <li className="text-gray-300">/</li>
-                        <li><Link href="/explore" className="hover:text-gray-900 transition-colors">Skills</Link></li>
-                        <li className="text-gray-300">/</li>
-                        <li className="text-gray-900">{skill.name}</li>
+                        <li><Link href="/" className="hover:text-gray-900 dark:hover:text-white transition-colors">Home</Link></li>
+                        <li className="text-gray-300 dark:text-gray-700">/</li>
+                        <li><Link href="/explore" className="hover:text-gray-900 dark:hover:text-white transition-colors">Skills</Link></li>
+                        <li className="text-gray-300 dark:text-gray-700">/</li>
+                        <li className="text-gray-900 dark:text-white">{skill.name}</li>
                     </ol>
                 </nav>
 
