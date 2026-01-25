@@ -76,7 +76,7 @@ export default function Sidebar() {
                 </div>
 
                 {/* Navigation */}
-                <nav className="flex-1 py-4 px-3 overflow-y-auto">
+                <nav className="flex-1 min-h-0 py-4 px-3 overflow-y-auto">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href ||
                             (item.href !== '/' && pathname.startsWith(item.href));
@@ -97,7 +97,7 @@ export default function Sidebar() {
                 </nav>
 
                 {/* Bottom */}
-                <div className="p-4 border-t border-gray-100 dark:border-gray-800 space-y-2">
+                <div className="p-4 border-t border-gray-100 dark:border-gray-800 space-y-2 flex-shrink-0">
                     <Link
                         href="/settings"
                         className="flex items-center gap-3 px-3 py-2 text-[14px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white w-full rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
