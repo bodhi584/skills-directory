@@ -36,8 +36,8 @@ export default function Sidebar() {
                             key={item.href}
                             href={item.href}
                             className={`flex items-center gap-3 px-3 py-2.5 text-[14px] rounded-lg transition-all mb-0.5 ${isActive
-                                    ? 'bg-[#c26148]/10 text-[#c26148] font-medium'
-                                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                                ? 'bg-[#c26148]/10 text-[#c26148] font-medium'
+                                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                                 }`}
                         >
                             <span className="text-base">{item.icon}</span>
@@ -49,12 +49,15 @@ export default function Sidebar() {
 
             {/* Bottom */}
             <div className="p-4 border-t border-gray-100 space-y-2">
-                <button className="flex items-center gap-3 px-3 py-2 text-[14px] text-gray-500 hover:text-gray-900 w-full rounded-lg hover:bg-gray-100 transition-colors">
+                <Link
+                    href="/settings"
+                    className="flex items-center gap-3 px-3 py-2 text-[14px] text-gray-500 hover:text-gray-900 w-full rounded-lg hover:bg-gray-100 transition-colors"
+                >
                     <span>⚙️</span>
                     <span>Settings</span>
-                </button>
+                </Link>
                 <Link
-                    href="/submit"
+                    href="/auth/signin"
                     className="flex items-center justify-center w-full py-2.5 rounded-lg bg-[#c26148] text-white text-[14px] font-medium hover:bg-[#b0553e] transition-all"
                 >
                     Sign In
