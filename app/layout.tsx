@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import { Providers } from "@/components/Providers";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -70,10 +71,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased min-h-screen bg-white`}>
-        <Sidebar />
-        <main className="ml-[220px] min-h-screen">
-          {children}
-        </main>
+        <Providers>
+          <Sidebar />
+          <main className="ml-[220px] min-h-screen">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );

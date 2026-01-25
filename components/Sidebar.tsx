@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 
 const navItems = [
     { href: '/', label: 'Home', icon: '🏠' },
@@ -13,6 +14,7 @@ const navItems = [
 
 export default function Sidebar() {
     const pathname = usePathname();
+    const { data: session, status } = useSession();
 
     return (
         <aside className="fixed left-0 top-0 bottom-0 w-[220px] bg-[#f9fafb] border-r border-gray-200 flex flex-col z-50">
@@ -56,12 +58,40 @@ export default function Sidebar() {
                     <span>⚙️</span>
                     <span>Settings</span>
                 </Link>
-                <Link
-                    href="/auth/signin"
-                    className="flex items-center justify-center w-full py-2.5 rounded-lg bg-[#c26148] text-white text-[14px] font-medium hover:bg-[#b0553e] transition-all"
-                >
-                    Sign In
-                </Link>
+
+                {status === 'loading' ? (
+                    <div className="flex items-center justify-center w-full py-2.5 rounded-lg bg-gray-200 text-gray-400 text-[14px]">
+                        Loading...
+                    </div>
+                ) : session ? (
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2 px-3 py-2">
+                            {session.user?.image && (
+                                <img
+                                    src={session.user.image}
+                                    alt=""
+                                    className="w-7 h-7 rounded-full"
+                                />
+                            )}
+                            <span className="text-sm text-gray-700 truncate flex-1">
+                                {session.user?.name || session.user?.email}
+                            </span>
+                        </div>
+                        <button
+                            onClick={() => signOut()}
+                            className="flex items-center justify-center w-full py-2 rounded-lg bg-gray-100 text-gray-600 text-[14px] font-medium hover:bg-gray-200 transition-all"
+                        >
+                            Sign Out
+                        </button>
+                    </div>
+                ) : (
+                    <Link
+                        href="/auth/signin"
+                        className="flex items-center justify-center w-full py-2.5 rounded-lg bg-[#c26148] text-white text-[14px] font-medium hover:bg-[#b0553e] transition-all"
+                    >
+                        Sign In
+                    </Link>
+                )}
             </div>
         </aside>
     );
