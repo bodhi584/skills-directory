@@ -32,7 +32,7 @@ export default function SearchBox({
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder={placeholder}
-                    className={`w-full ${size === 'lg' ? 'py-4 px-6 text-lg' : 'py-3.5 px-5'} rounded-xl bg-white border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#c26148] transition-colors`}
+                    className={`w-full ${size === 'lg' ? 'py-4 px-6 text-lg' : 'py-3.5 px-5'} rounded-xl bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#c26148] transition-colors`}
                 />
                 <button
                     type="submit"

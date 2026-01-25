@@ -22,7 +22,7 @@ export default async function ExplorePage({ searchParams }: PageProps) {
     });
 
     return (
-        <div className="min-h-screen py-12">
+        <div className="min-h-screen py-12 bg-white dark:bg-[#0f0f0f] transition-colors">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-12">
@@ -43,8 +43,8 @@ export default async function ExplorePage({ searchParams }: PageProps) {
                             <Link
                                 href="/explore"
                                 className={`px-3 py-1 rounded-full text-sm transition-colors ${!params.category
-                                        ? 'bg-purple-500 text-white'
-                                        : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                                    ? 'bg-purple-500 text-white'
+                                    : 'bg-white/5 text-gray-400 hover:bg-white/10'
                                     }`}
                             >
                                 All
@@ -54,8 +54,8 @@ export default async function ExplorePage({ searchParams }: PageProps) {
                                     key={cat.slug}
                                     href={`/explore?category=${cat.slug}`}
                                     className={`px-3 py-1 rounded-full text-sm transition-colors ${params.category === cat.slug
-                                            ? 'bg-purple-500 text-white'
-                                            : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                                        ? 'bg-purple-500 text-white'
+                                        : 'bg-white/5 text-gray-400 hover:bg-white/10'
                                         }`}
                                 >
                                     {cat.icon} {cat.name}

@@ -14,21 +14,21 @@ export default function FeedPage() {
         .slice(0, 20);
 
     return (
-        <div className="min-h-screen bg-white">
-            <div className="h-14 border-b border-gray-100 flex items-center justify-end px-6">
+        <div className="min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors">
+            <div className="h-14 border-b border-gray-100 dark:border-gray-800 flex items-center justify-end px-6">
                 <Link href="/submit" className="text-[#c26148] text-sm font-medium hover:opacity-80">
                     + Submit Skill
                 </Link>
             </div>
 
             <div className="max-w-5xl mx-auto px-8 py-12">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Feed</h1>
-                <p className="text-gray-500 mb-10">Latest skills and updates</p>
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Feed</h1>
+                <p className="text-gray-500 dark:text-gray-400 mb-10">Latest skills and updates</p>
 
                 <div className="space-y-4">
                     {latestSkills.map((skill, index) => (
                         <div key={skill.id} className="flex gap-4 items-start">
-                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm font-medium text-gray-500">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-sm font-medium text-gray-500 dark:text-gray-400">
                                 {index + 1}
                             </div>
                             <div className="flex-1">
