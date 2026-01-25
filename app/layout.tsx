@@ -70,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased min-h-screen bg-white`}>
+      <body className={`${inter.variable} antialiased min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors`}>
         <Providers>
           <Sidebar />
           <main className="ml-[220px] min-h-screen">

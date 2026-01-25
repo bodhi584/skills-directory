@@ -1,56 +1,80 @@
 'use client';
 
 import Link from 'next/link';
+import { useTheme } from '@/components/ThemeProvider';
+import { useEffect, useState } from 'react';
+
+function ThemeSelect() {
+    const { theme, setTheme } = useTheme();
+
+    return (
+        <select
+            value={theme}
+            onChange={(e) => setTheme(e.target.value as 'light' | 'dark' | 'system')}
+            className="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-[#c26148]"
+        >
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+        </select>
+    );
+}
 
 export default function SettingsPage() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
-        <div className="min-h-screen bg-white">
-            <div className="h-14 border-b border-gray-100 flex items-center justify-end px-6">
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+            <div className="h-14 border-b border-gray-100 dark:border-gray-800 flex items-center justify-end px-6">
                 <Link href="/submit" className="text-[#c26148] text-sm font-medium hover:opacity-80">
                     + Submit Skill
                 </Link>
             </div>
 
             <div className="max-w-2xl mx-auto px-8 py-12">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Settings</h1>
-                <p className="text-gray-500 mb-10">Manage your preferences</p>
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Settings</h1>
+                <p className="text-gray-500 dark:text-gray-400 mb-10">Manage your preferences</p>
 
                 <div className="space-y-6">
                     {/* Theme Setting */}
-                    <div className="p-6 rounded-2xl border border-gray-100">
-                        <h2 className="text-lg font-semibold text-gray-900 mb-4">Appearance</h2>
+                    <div className="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800">
+                        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Appearance</h2>
                         <div className="flex items-center justify-between">
                             <div>
-                                <p className="font-medium text-gray-700">Theme</p>
-                                <p className="text-sm text-gray-500">Choose your preferred theme</p>
+                                <p className="font-medium text-gray-700 dark:text-gray-200">Theme</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Choose your preferred theme</p>
                             </div>
-                            <select className="px-4 py-2 rounded-lg border border-gray-200 text-gray-700 bg-white">
-                                <option value="light">Light</option>
-                                <option value="dark">Dark</option>
-                                <option value="system">System</option>
-                            </select>
+                            {mounted ? (
+                                <ThemeSelect />
+                            ) : (
+                                <div className="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 w-24 h-10 animate-pulse" />
+                            )}
                         </div>
                     </div>
 
                     {/* Notifications */}
-                    <div className="p-6 rounded-2xl border border-gray-100">
-                        <h2 className="text-lg font-semibold text-gray-900 mb-4">Notifications</h2>
+                    <div className="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800">
+                        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Notifications</h2>
                         <div className="flex items-center justify-between">
                             <div>
-                                <p className="font-medium text-gray-700">Email Updates</p>
-                                <p className="text-sm text-gray-500">Receive updates about new skills</p>
+                                <p className="font-medium text-gray-700 dark:text-gray-200">Email Updates</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Receive updates about new skills</p>
                             </div>
                             <label className="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" className="sr-only peer" />
-                                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c26148]"></div>
+                                <div className="w-11 h-6 bg-gray-200 dark:bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c26148]"></div>
                             </label>
                         </div>
                     </div>
 
                     {/* Account */}
-                    <div className="p-6 rounded-2xl border border-gray-100">
-                        <h2 className="text-lg font-semibold text-gray-900 mb-4">Account</h2>
-                        <p className="text-gray-500 mb-4">Sign in to sync your preferences and saved skills.</p>
+                    <div className="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800">
+                        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Account</h2>
+                        <p className="text-gray-500 dark:text-gray-400 mb-4">Sign in to sync your preferences and saved skills.</p>
                         <Link
                             href="/auth/signin"
                             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#c26148] text-white font-medium hover:bg-[#b0553e] transition-colors"
