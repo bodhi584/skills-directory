@@ -73,7 +73,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors`}>
         <Providers>
           <Sidebar />
-          <main className="ml-[220px] min-h-screen">
+          <main className="lg:ml-[220px] min-h-screen">
             {children}
           </main>
         </Providers>

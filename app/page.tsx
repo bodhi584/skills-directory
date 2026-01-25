@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors">
       {/* Top Header Bar */}
-      <div className="h-14 border-b border-gray-100 dark:border-gray-800 flex items-center justify-end px-6">
+      <div className="h-14 border-b border-gray-100 dark:border-gray-800 flex items-center justify-end px-4 sm:px-6 pt-16 lg:pt-0">
         <Link
           href="/submit"
           className="text-[#c26148] text-sm font-medium hover:opacity-80"
@@ -21,7 +21,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="max-w-5xl mx-auto px-8 py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Hero - SEO Optimized */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
