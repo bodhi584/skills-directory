@@ -1,11 +1,63 @@
+'use client';
+
+import { Suspense } from 'react';
 import Link from 'next/link';
 import SearchBox from '@/components/SearchBox';
 import SkillCard from '@/components/SkillCard';
+import SkillCardSkeleton from '@/components/SkillCardSkeleton';
 import { getFeaturedSkills, getLatestSkills, getCategoriesWithCount, initialSkills } from '@/lib/data';
 
-export default function Home() {
+function FeaturedSkillsSection() {
   const featuredSkills = getFeaturedSkills();
+
+  return (
+    <section className="mb-16">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Featured Skills</h2>
+        <Link href="/explore" className="text-[#c26148] text-sm font-medium hover:opacity-80">
+          View All →
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {featuredSkills.map(skill => (
+          <SkillCard key={skill.id} skill={skill} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LatestSkillsSection() {
   const latestSkills = getLatestSkills();
+
+  return (
+    <section>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Latest Skills</h2>
+        <Link href="/explore?sort=latest" className="text-[#c26148] text-sm font-medium hover:opacity-80">
+          View All →
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {latestSkills.map(skill => (
+          <SkillCard key={skill.id} skill={skill} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function SkillsLoadingSkeleton() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <SkillCardSkeleton key={i} />
+      ))}
+    </div>
+  );
+}
+
+export default function Home() {
   const categories = getCategoriesWithCount();
   const totalSkills = initialSkills.length;
 
@@ -55,20 +107,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Featured Skills */}
-        <section className="mb-16">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Featured Skills</h2>
-            <Link href="/explore" className="text-[#c26148] text-sm font-medium hover:opacity-80">
-              View All →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {featuredSkills.map(skill => (
-              <SkillCard key={skill.id} skill={skill} />
-            ))}
-          </div>
-        </section>
+        {/* Featured Skills with Suspense */}
+        <Suspense fallback={<SkillsLoadingSkeleton />}>
+          <FeaturedSkillsSection />
+        </Suspense>
 
         {/* Categories */}
         <section className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-16">
@@ -90,20 +132,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Latest Skills */}
-        <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Latest Skills</h2>
-            <Link href="/explore?sort=latest" className="text-[#c26148] text-sm font-medium hover:opacity-80">
-              View All →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {latestSkills.map(skill => (
-              <SkillCard key={skill.id} skill={skill} />
-            ))}
-          </div>
-        </section>
+        {/* Latest Skills with Suspense */}
+        <Suspense fallback={<SkillsLoadingSkeleton />}>
+          <LatestSkillsSection />
+        </Suspense>
       </div>
     </div>
   );
