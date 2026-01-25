@@ -16,9 +16,11 @@ export default async function SignInPage() {
             <div className="max-w-md w-full mx-auto px-8 py-12">
                 <div className="text-center mb-10">
                     <Link href="/" className="inline-flex items-center gap-2.5 mb-8">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
-                            AG
-                        </div>
+                        <img
+                            src="/logo.png"
+                            alt="Antigravity"
+                            className="w-10 h-10"
+                        />
                         <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Antigravity Skills</span>
                     </Link>
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Welcome back</h1>

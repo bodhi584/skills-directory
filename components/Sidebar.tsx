@@ -68,9 +68,11 @@ export default function Sidebar() {
                 {/* Logo */}
                 <div className="h-16 flex items-center px-5 border-b border-gray-100 dark:border-gray-800">
                     <Link href="/" className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                            AG
-                        </div>
+                        <img
+                            src="/logo.png"
+                            alt="Antigravity"
+                            className="w-8 h-8"
+                        />
                         <span className="font-bold text-base tracking-tight text-gray-900 dark:text-white">Antigravity</span>
                     </Link>
                 </div>
