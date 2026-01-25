@@ -16,30 +16,53 @@ export default function SubmitPage() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [issueUrl, setIssueUrl] = useState<string>('');
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setErrorMessage('');
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        setIsSubmitting(false);
-        setSubmitStatus('success');
-
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setFormData({
-                type: 'skill',
-                name: '',
-                githubUrl: '',
-                description: '',
-                category: 'agents',
-                tags: '',
-                author: '',
+        try {
+            const response = await fetch('/api/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
-            setSubmitStatus('idle');
-        }, 3000);
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to submit');
+            }
+
+            setIssueUrl(data.issueUrl);
+            setSubmitStatus('success');
+
+            // Reset form after 5 seconds
+            setTimeout(() => {
+                setFormData({
+                    type: 'skill',
+                    name: '',
+                    githubUrl: '',
+                    description: '',
+                    category: 'agents',
+                    tags: '',
+                    author: '',
+                });
+                setSubmitStatus('idle');
+                setIssueUrl('');
+            }, 5000);
+        } catch (error) {
+            setSubmitStatus('error');
+            setErrorMessage(error instanceof Error ? error.message : 'An error occurred');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -188,8 +211,30 @@ export default function SubmitPage() {
                             {/* Success Message */}
                             {submitStatus === 'success' && (
                                 <div className="p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
-                                    <p className="text-green-800 dark:text-green-200 text-sm">
+                                    <p className="text-green-800 dark:text-green-200 text-sm mb-2">
                                         ✅ Thank you! Your submission has been received and will be reviewed soon.
+                                    </p>
+                                    {issueUrl && (
+                                        <a
+                                            href={issueUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm text-green-700 dark:text-green-300 hover:underline inline-flex items-center gap-1"
+                                        >
+                                            View on GitHub
+                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </a>
+                                    )}
+                                </div>
+                            )}
+
+                            {/* Error Message */}
+                            {submitStatus === 'error' && (
+                                <div className="p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+                                    <p className="text-red-800 dark:text-red-200 text-sm">
+                                        ❌ {errorMessage || 'Failed to submit. Please try again.'}
                                     </p>
                                 </div>
                             )}
