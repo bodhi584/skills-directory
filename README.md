@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Antigravity Skills 🌌
 
-## Getting Started
+> **The #1 curated directory for AI Agent Skills.**
 
-First, run the development server:
+[![Live Site](https://img.shields.io/badge/Live-AntigravitySkills.org-blue?style=for-the-badge&logo=vercel)](https://www.antigravityskills.org/)
+
+Antigravity Skills is a premier navigation station and curated directory designed for the AI Agent ecosystem. We collect, verify, and categorize the best skills for top-tier agentic platforms.
+
+## 🚀 Mission
+
+To empower AI agents (and their humans) with high-quality, plug-and-play capabilities that defy gravity.
+
+## 🎯 Supported Platforms
+
+- **Claude Code**
+- **Cursor**
+- **Gemini CLI**
+- **Google Antigravity**
+- And more...
+
+## ✨ Features
+
+- **Curated Selection**: 68+ high-quality skills and growing.
+- **Categorized Navigation**: Easily find skills for [Agents](https://www.antigravityskills.org/category/agents), [Coding](https://www.antigravityskills.org/category/coding), and more.
+- **Community Driven**: Built to serve the evolving needs of the agentic web.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+## 📦 Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the directory locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Maintained by [bodhi584](https://github.com/bodhi584).*
