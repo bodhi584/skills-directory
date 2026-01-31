@@ -1,0 +1,471 @@
+[
+  {
+    "id": 269027,
+    "name": "phpMyFAQ",
+    "full_name": "thorsten/phpMyFAQ",
+    "html_url": "https://github.com/thorsten/phpMyFAQ",
+    "description": "phpMyFAQ - Open Source FAQ web application for PHP 8.3+ and MySQL, PostgreSQL and other databases",
+    "stars": 611,
+    "topics": [
+      "database",
+      "docker",
+      "docker-compose",
+      "elasticsearch",
+      "faq",
+      "frankenphp",
+      "kubernetes",
+      "mariadb",
+      "mcp-server",
+      "mssql",
+      "mysql",
+      "opensearch",
+      "php",
+      "phpmyfaq",
+      "postgresql",
+      "sqlite"
+    ],
+    "updated_at": "2026-01-31T10:38:25Z",
+    "language": "PHP",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 737584922,
+    "name": "ksail",
+    "full_name": "devantler-tech/ksail",
+    "html_url": "https://github.com/devantler-tech/ksail",
+    "description": "CLI tool for creating, maintaining and operating Kubernetes clusters.",
+    "stars": 125,
+    "topics": [
+      "ai",
+      "app",
+      "argocd",
+      "cli",
+      "declarative",
+      "fluxcd",
+      "github-copilot",
+      "helm",
+      "hetzner",
+      "k3d",
+      "k3s",
+      "kind",
+      "kubeconform",
+      "kubectl",
+      "kubernetes",
+      "kustomize",
+      "mcp-server",
+      "talos-linux",
+      "yaml"
+    ],
+    "updated_at": "2026-01-31T10:37:25Z",
+    "language": "Go",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 989754354,
+    "name": "deploystack",
+    "full_name": "deploystackio/deploystack",
+    "html_url": "https://github.com/deploystackio/deploystack",
+    "description": "Open source MCP hosting - deploy MCP servers to HTTP endpoints for n8n, Dify, Voiceflow, and any MCP client.",
+    "stars": 51,
+    "topics": [
+      "deploystack",
+      "mcp",
+      "mcp-server",
+      "model-context-protocol",
+      "nodejs",
+      "vuejs"
+    ],
+    "updated_at": "2026-01-31T10:28:19Z",
+    "language": "TypeScript",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 872015964,
+    "name": "haiku.rag",
+    "full_name": "ggozad/haiku.rag",
+    "html_url": "https://github.com/ggozad/haiku.rag",
+    "description": "Opinionated agentic RAG powered by LanceDB, Pydantic AI, and Docling",
+    "stars": 480,
+    "topics": [
+      "ai",
+      "docling",
+      "lancedb",
+      "mcp",
+      "mcp-server",
+      "ml",
+      "pydantic-ai",
+      "rag"
+    ],
+    "updated_at": "2026-01-31T10:24:20Z",
+    "language": "Python",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 864915169,
+    "name": "flapi",
+    "full_name": "DataZooDE/flapi",
+    "html_url": "https://github.com/DataZooDE/flapi",
+    "description": "API Framework heavily relying on the power of DuckDB and DuckDB extensions. Ready to build performant and cost-efficient APIs on top of BigQuery or Snowflake  for AI Agents and Data Apps",
+    "stars": 65,
+    "topics": [
+      "api",
+      "cpp",
+      "duckdb",
+      "duckdb-extension",
+      "mcp",
+      "mcp-server",
+      "openapi3",
+      "rest",
+      "vscode-extension"
+    ],
+    "updated_at": "2026-01-31T10:16:49Z",
+    "language": "C++",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1030120465,
+    "name": "ai-resource-manager",
+    "full_name": "jomadu/ai-resource-manager",
+    "html_url": "https://github.com/jomadu/ai-resource-manager",
+    "description": "Package manager for AI rules and prompts with semantic versioning and automatic distribution to AI tools.",
+    "stars": 20,
+    "topics": [
+      "ai-assistant",
+      "ai-tools",
+      "automation",
+      "cli-tool",
+      "cursor-rules",
+      "dependency-management",
+      "developer-tools",
+      "package-manager",
+      "productivity",
+      "semantic-versioning"
+    ],
+    "updated_at": "2026-01-28T20:08:21Z",
+    "language": "Go",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1112272749,
+    "name": "advance-minimax-m2-cursor-rules",
+    "full_name": "madebyaris/advance-minimax-m2-cursor-rules",
+    "html_url": "https://github.com/madebyaris/advance-minimax-m2-cursor-rules",
+    "description": "Agentic-first Cursor Rules powered by MiniMax M2 — clarify-first prompting, interleaved thinking, and full tool orchestration for production-ready AI coding",
+    "stars": 34,
+    "topics": [
+      "agentic-ai",
+      "ai-coding",
+      "ai-workflow",
+      "code-generation",
+      "cursor",
+      "cursor-ide",
+      "cursor-rules",
+      "developer-tools",
+      "mcp",
+      "minimax",
+      "minimax-m2"
+    ],
+    "updated_at": "2026-01-28T18:02:16Z",
+    "language": "JavaScript",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1023215238,
+    "name": "lovable-boilerplate",
+    "full_name": "chihebnabil/lovable-boilerplate",
+    "html_url": "https://github.com/chihebnabil/lovable-boilerplate",
+    "description": "A Lovable-inspired React boilerplate that brings no-code AI UI generation into clean code. Fully open, customizable, and structured to work seamlessly with GitHub Copilot",
+    "stars": 42,
+    "topics": [
+      "boilerplate",
+      "copilot",
+      "copilot-enabled",
+      "cursor-rules",
+      "lovable",
+      "lovable-dev",
+      "react",
+      "react-boilerplate"
+    ],
+    "updated_at": "2026-01-26T06:10:37Z",
+    "language": "TypeScript",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 950451195,
+    "name": "cursor-rules",
+    "full_name": "flyeric0212/cursor-rules",
+    "html_url": "https://github.com/flyeric0212/cursor-rules",
+    "description": "整理和收集来自不同项目的Cursor规则文件，提供多种编程语言和框架的规则支持。",
+    "stars": 1606,
+    "topics": [
+      "cursor",
+      "cursor-rules"
+    ],
+    "updated_at": "2026-01-31T10:23:08Z",
+    "language": null,
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1087331020,
+    "name": "rules",
+    "full_name": "matlab/rules",
+    "html_url": "https://github.com/matlab/rules",
+    "description": "A collection of MATLAB coding rules and guidelines optimized for use with AI coding assistants like Cursor, Windsurf, Claude Code, and GitHub Copilot",
+    "stars": 16,
+    "topics": [
+      "ai-coding-rules",
+      "claude-code",
+      "cline-rules",
+      "cursor-rules",
+      "matlab",
+      "matlab-rules",
+      "windsurf-rules"
+    ],
+    "updated_at": "2026-01-29T12:10:10Z",
+    "language": null,
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1143664622,
+    "name": "google-antigravity",
+    "full_name": "Dokhacgiakhoa/google-antigravity",
+    "html_url": "https://github.com/Dokhacgiakhoa/google-antigravity",
+    "description": null,
+    "stars": 126,
+    "topics": [],
+    "updated_at": "2026-01-31T10:16:25Z",
+    "language": "Python",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1142132744,
+    "name": "antigravity-link-extension",
+    "full_name": "cafeTechne/antigravity-link-extension",
+    "html_url": "https://github.com/cafeTechne/antigravity-link-extension",
+    "description": "VS Code extension that bridges Antigravity sessions to mobile for uploads and voice-to-text",
+    "stars": 11,
+    "topics": [
+      "ai-agents",
+      "antigravity",
+      "antigravity-ide",
+      "antigravity-tools",
+      "google",
+      "mobile",
+      "qr-code",
+      "vscode-extension",
+      "vscode-extensions",
+      "websocket"
+    ],
+    "updated_at": "2026-01-31T02:44:08Z",
+    "language": "HTML",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1113403973,
+    "name": "opencode-antigravity-auth",
+    "full_name": "NoeFabris/opencode-antigravity-auth",
+    "html_url": "https://github.com/NoeFabris/opencode-antigravity-auth",
+    "description": "Enable Opencode to authenticate against Antigravity (Google's IDE) via OAuth so you can use Antigravity rate limits and access models like gemini-3-pro and claude-opus-4-5-thinking with your Google credentials.",
+    "stars": 7066,
+    "topics": [
+      "claude",
+      "gemini",
+      "google",
+      "opencode"
+    ],
+    "updated_at": "2026-01-31T10:32:21Z",
+    "language": "TypeScript",
+    "humanized": {
+      "one_liner": "借用 Google 开发者通道，免费调用顶配模型 (Gemini 3/Claude Opus)。",
+      "for_who": "追求极致性价比、且不怕封号风险的极客玩家。",
+      "how_to": "⚠️ 高风险预警：仅限使用小号！\n1. 准备一个非主用 Google 账号。\n2. 安装插件：`npm install opencode-antigravity-auth`。\n3. 运行 `opencode auth login google` 进行授权。\n4. 在配置中切换模型即可白嫖算力。"
+    },
+    "tags": [
+      "High Risk",
+      "Free API",
+      "OAuth"
+    ]
+  },
+  {
+    "id": 1112002090,
+    "name": "vscode-antigravity-cockpit",
+    "full_name": "jlcodes99/vscode-antigravity-cockpit",
+    "html_url": "https://github.com/jlcodes99/vscode-antigravity-cockpit",
+    "description": "VS Code extension for monitoring Google Antigravity AI quotas. Features Webview dashboard, QuickPick mode, and quota grouping.",
+    "stars": 2414,
+    "topics": [],
+    "updated_at": "2026-01-31T09:38:20Z",
+    "language": "TypeScript",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1099636778,
+    "name": "antigravity-workspace-template",
+    "full_name": "study8677/antigravity-workspace-template",
+    "html_url": "https://github.com/study8677/antigravity-workspace-template",
+    "description": "🪐 The ultimate starter kit for Google Antigravity IDE. Optimized for Gemini 3 Agentic Workflows, \"Deep Think\" mode, and auto-configuring .cursorrules.",
+    "stars": 794,
+    "topics": [
+      "agentic-ai",
+      "deep-think",
+      "gemini3pro",
+      "google-antigravity",
+      "python-template"
+    ],
+    "updated_at": "2026-01-31T05:00:23Z",
+    "language": "Python",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1127248221,
+    "name": "clawhub",
+    "full_name": "openclaw/clawhub",
+    "html_url": "https://github.com/openclaw/clawhub",
+    "description": "Skill Directory for OpenClaw",
+    "stars": 753,
+    "topics": [
+      "directory",
+      "skill"
+    ],
+    "updated_at": "2026-01-31T10:35:20Z",
+    "language": "TypeScript",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1134144797,
+    "name": "skillshare",
+    "full_name": "runkids/skillshare",
+    "html_url": "https://github.com/runkids/skillshare",
+    "description": "📚 Sync skills across all AI CLI tools with one command and simplify team sharing. Supporting Claude Code, OpenClaw, OpenCode & more",
+    "stars": 306,
+    "topics": [
+      "ai",
+      "amp",
+      "antigravity",
+      "claude-code",
+      "clawdbot",
+      "cli",
+      "codex",
+      "cross-machine-sync",
+      "cursor",
+      "dotfiles",
+      "moltbot",
+      "openclaw",
+      "opencode",
+      "skills",
+      "skills-management",
+      "skillshare",
+      "team-management"
+    ],
+    "updated_at": "2026-01-31T09:55:41Z",
+    "language": "Go",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1142701705,
+    "name": "openclaw-skills",
+    "full_name": "BankrBot/openclaw-skills",
+    "html_url": "https://github.com/BankrBot/openclaw-skills",
+    "description": "Moltbot skill library for AI agents. Including polymarket, crypto trading, DeFi operations,  automation, and more. Open a PR to add skills. ",
+    "stars": 73,
+    "topics": [],
+    "updated_at": "2026-01-31T10:14:45Z",
+    "language": "Python",
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  },
+  {
+    "id": 1141704318,
+    "name": "awesome-openclaw-skills",
+    "full_name": "VoltAgent/awesome-openclaw-skills",
+    "html_url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+    "description": "The awesome collection of OpenClaw Skills. Formerly known as Moltbot, originally Clawdbot.",
+    "stars": 4487,
+    "topics": [
+      "agent-skills",
+      "awesome-list",
+      "clawd",
+      "clawdbot",
+      "clawdbot-skill",
+      "clawdhub",
+      "moltbot",
+      "moltbot-skills",
+      "openclaw",
+      "openclaw-skills"
+    ],
+    "updated_at": "2026-01-31T10:39:39Z",
+    "language": null,
+    "humanized": {
+      "one_liner": "",
+      "for_who": "",
+      "how_to": ""
+    }
+  }
+]
