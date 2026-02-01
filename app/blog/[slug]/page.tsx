@@ -10,24 +10,33 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }) {
-  const slug = params.slug;
-  const titles = {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const slug = (await params).slug;
+  
+  const titles: Record<string, string> = {
     'what-are-ai-agent-skills': 'What Are AI Agent Skills? A Complete Guide for 2025',
     '5-skills-10x-productivity': '5 AI Agent Skills That Will 10x Your Productivity',
     'create-your-first-skill': 'How to Create Your First AI Agent Skill',
   };
   
   return {
-    title: `${titles[slug]} - Antigravity Skills Blog`,
+    title: `${titles[slug] || 'Blog Post'} - Antigravity Skills Blog`,
     description: 'Read our latest articles about AI Agent Skills.',
   };
 }
 
-export default async function BlogPost({ params }) {
-  const slug = params.slug;
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const slug = (await params).slug;
   
-  const posts = {
+  type Post = {
+    title: string;
+    date: string;
+    readTime: string;
+    tags: string[];
+    content: string;
+  };
+  
+  const posts: Record<string, Post> = {
     'what-are-ai-agent-skills': {
       title: 'What Are AI Agent Skills? A Complete Guide for 2025',
       date: '2026-02-01',
