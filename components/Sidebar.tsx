@@ -12,6 +12,7 @@ const navItems = [
     { href: '/tags', label: 'Tags', icon: '#️⃣' },
     { href: '/feed', label: 'Feed', icon: '📰' },
     { href: '/blog', label: 'Blog', icon: '📝' },
+    { href: '/use-cases', label: 'Use Cases', icon: '🎯' },
 ];
 
 export default function Sidebar() {
