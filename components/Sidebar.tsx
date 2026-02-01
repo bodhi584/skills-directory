@@ -11,6 +11,7 @@ const navItems = [
     { href: '/categories', label: 'Categories', icon: '📁' },
     { href: '/tags', label: 'Tags', icon: '#️⃣' },
     { href: '/feed', label: 'Feed', icon: '📰' },
+    { href: '/blog', label: 'Blog', icon: '📝' },
 ];
 
 export default function Sidebar() {
