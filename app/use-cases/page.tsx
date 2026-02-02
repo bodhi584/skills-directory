@@ -25,14 +25,14 @@ export default function UseCasesPage() {
       {/* Scenario 1: Multi-Agent */}
       <section id="multi-agent" className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
         <div className="text-4xl mb-4">🤖</div>
-        <h2 className="text-2xl font-bold mb-4">场景一：多代理协作开发</h2>
+        <h2 className="text-2xl font-bold mb-4">Scenario 1: Multi-Agent Collaborative Development</h2>
         
         <div className="mb-6">
-          <h3 className="font-semibold mb-2">使用的 Skills</h3>
+          <h3 className="font-semibold mb-2">Skills Used</h3>
           <ul className="list-disc list-inside text-gray-600">
-            <li>Agent Manager - 管理多个代理</li>
-            <li>Systematic Debugging - 系统化调试</li>
-            <li>Browser Automation - 自动化测试</li>
+            <li>Agent Manager - Manage multiple agents</li>
+            <li>Systematic Debugging - Systematic debugging</li>
+            <li>Browser Automation - Automated testing</li>
           </ul>
         </div>
 
@@ -44,10 +44,10 @@ export default function UseCasesPage() {
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
 │  │  Agent 1    │  │  Agent 2    │  │  Agent 3    │         │
 │  │  🔄 Running │  │  ✅ Done    │  │  ⏳ Pending │         │
-│  │  前端开发   │  │  API设计    │  │  文档编写   │         │
+│  │  Frontend  │  │  API Design │  │  Docs       │         │
 │  └─────────────┘  └─────────────┘  └─────────────┘         │
-│  📊 总进度: ████████░░░░░░░░░░░░  66%                       │
-│  ⏱️ 预计剩余: 15分钟                                         │
+│  📊 Progress: ████████░░░░░░░░░░░░  66%                      │
+│  ⏱️ ETA: 15 minutes                                         │
 └─────────────────────────────────────────────────────────────┘
           `}</pre>
         </div>
@@ -55,15 +55,15 @@ export default function UseCasesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-blue-600">3-5x</div>
-            <div className="text-gray-600">开发周期缩短</div>
+            <div className="text-gray-600">Faster Development Cycles</div>
           </div>
           <div className="bg-green-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-green-600">60%↓</div>
-            <div className="text-gray-600">沟通成本降低</div>
+            <div className="text-gray-600">Reduced Communication</div>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-purple-600">40%↓</div>
-            <div className="text-gray-600">Bug 数量减少</div>
+            <div className="text-gray-600">Fewer Bugs</div>
           </div>
         </div>
       </section>
@@ -71,14 +71,14 @@ export default function UseCasesPage() {
       {/* Scenario 2: Code Review */}
       <section id="code-review" className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
         <div className="text-4xl mb-4">🔍</div>
-        <h2 className="text-2xl font-bold mb-4">场景二：智能代码审查</h2>
+        <h2 className="text-2xl font-bold mb-4">Scenario 2: Intelligent Code Review</h2>
         
         <div className="mb-6">
-          <h3 className="font-semibold mb-2">使用的 Skills</h3>
+          <h3 className="font-semibold mb-2">Skills Used</h3>
           <ul className="list-disc list-inside text-gray-600">
-            <li>cursor-rules - 多语言编码规范</li>
-            <li>Systematic Debugging - 审查清单</li>
-            <li>ai-resource-manager - 版本化规则</li>
+            <li>cursor-rules - Multi-language coding standards</li>
+            <li>Systematic Debugging - Review checklist</li>
+            <li>ai-resource-manager - Versioned rules</li>
           </ul>
         </div>
 
@@ -87,10 +87,10 @@ export default function UseCasesPage() {
 ┌─────────────────────────────────────────────────────────────┐
 │  📋 Code Review Report                                       │
 ├─────────────────────────────────────────────────────────────┤
-│  ✅ 通过: 23项                                                │
-│  ⚠️ 建议: 5项                                                 │
-│  ❌ 修复: 2项                                                 │
-│  ⭐ 代码健康度: 85/100                                        │
+│  ✅ Passed: 23                                               │
+│  ⚠️ Suggestions: 5                                           │
+│  ❌ Fixes Required: 2                                        │
+│  ⭐ Code Health: 85/100                                      │
 └─────────────────────────────────────────────────────────────┘
           `}</pre>
         </div>
@@ -98,15 +98,15 @@ export default function UseCasesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-blue-600">83%↓</div>
-            <div className="text-gray-600">审查时间</div>
+            <div className="text-gray-600">Review Time</div>
           </div>
           <div className="bg-green-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-green-600">3x</div>
-            <div className="text-gray-600">发现问题提升</div>
+            <div className="text-gray-600">More Issues Found</div>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-purple-600">100%</div>
-            <div className="text-gray-600">代码规范达标</div>
+            <div className="text-gray-600">Code Standards Met</div>
           </div>
         </div>
       </section>
@@ -114,13 +114,13 @@ export default function UseCasesPage() {
       {/* Scenario 3: Security */}
       <section id="security" className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
         <div className="text-4xl mb-4">🛡️</div>
-        <h2 className="text-2xl font-bold mb-4">场景三：安全渗透测试</h2>
+        <h2 className="text-2xl font-bold mb-4">Scenario 3: Security Penetration Testing</h2>
         
         <div className="mb-6">
-          <h3 className="font-semibold mb-2">使用的 Skills</h3>
+          <h3 className="font-semibold mb-2">Skills Used</h3>
           <ul className="list-disc list-inside text-gray-600">
-            <li>Ethical Hacking Methodology - 渗透测试方法论</li>
-            <li>Browser Automation - 自动化扫描</li>
+            <li>Ethical Hacking Methodology - Penetration testing framework</li>
+            <li>Browser Automation - Automated scanning</li>
           </ul>
         </div>
 
@@ -129,8 +129,8 @@ export default function UseCasesPage() {
 ┌─────────────────────────────────────────────────────────────┐
 │  🛡️ Security Scan Results                                    │
 ├─────────────────────────────────────────────────────────────┤
-│  🔴 高危: 0    🟠 中危: 2    🟡 低危: 5    🟢 安全: 18       │
-│  ⏱️ 耗时: 12分钟                                             │
+│  🔴 Critical: 0    🟠 Medium: 2    🟡 Low: 5    🟢 Safe: 18  │
+│  ⏱️ Duration: 12 minutes                                     │
 └─────────────────────────────────────────────────────────────┘
           `}</pre>
         </div>
@@ -138,15 +138,15 @@ export default function UseCasesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-blue-600">10x</div>
-            <div className="text-gray-600">扫描效率提升</div>
+            <div className="text-gray-600">Faster Scanning</div>
           </div>
           <div className="bg-green-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-green-600">80%↑</div>
-            <div className="text-gray-600">覆盖率提升</div>
+            <div className="text-gray-600">Coverage Improved</div>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-purple-600">90%↓</div>
-            <div className="text-gray-600">误报率降低</div>
+            <div className="text-gray-600">False Positives</div>
           </div>
         </div>
       </section>
@@ -154,13 +154,13 @@ export default function UseCasesPage() {
       {/* Scenario 4: RAG */}
       <section id="rag" className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
         <div className="text-4xl mb-4">📊</div>
-        <h2 className="text-2xl font-bold mb-4">场景四：RAG 知识库构建</h2>
+        <h2 className="text-2xl font-bold mb-4">Scenario 4: RAG Knowledge Base</h2>
         
         <div className="mb-6">
-          <h3 className="font-semibold mb-2">使用的 Skills</h3>
+          <h3 className="font-semibold mb-2">Skills Used</h3>
           <ul className="list-disc list-inside text-gray-600">
-            <li>haiku.rag - 智能 RAG 框架</li>
-            <li>flapi - 高性能 API</li>
+            <li>haiku.rag - Intelligent RAG framework</li>
+            <li>flapi - High-performance API</li>
           </ul>
         </div>
 
@@ -169,8 +169,8 @@ export default function UseCasesPage() {
 ┌─────────────────────────────────────────────────────────────┐
 │  📚 RAG Knowledge Base                                       │
 ├─────────────────────────────────────────────────────────────┤
-│  📁 文档数量: 1,247  |  📄 总字数: 5.2M  |  🔍 响应: 0.8秒   │
-│  📈 相关度: 92%                                                │
+│  📁 Docs: 1,247  |  📄 Total Words: 5.2M  |  🔍 Response: 0.8s│
+│  📈 Relevance: 92%                                          │
 └─────────────────────────────────────────────────────────────┘
           `}</pre>
         </div>
@@ -178,15 +178,15 @@ export default function UseCasesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-blue-600">10x</div>
-            <div className="text-gray-600">问答效率提升</div>
+            <div className="text-gray-600">Q&A Efficiency</div>
           </div>
           <div className="bg-green-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-green-600">360x+</div>
-            <div className="text-gray-600">知识查找速度</div>
+            <div className="text-gray-600">Knowledge Search Speed</div>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-purple-600">92%</div>
-            <div className="text-gray-600">回答准确率</div>
+            <div className="text-gray-600">Answer Accuracy</div>
           </div>
         </div>
       </section>
@@ -194,13 +194,13 @@ export default function UseCasesPage() {
       {/* Scenario 5: DevOps */}
       <section id="devops" className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
         <div className="text-4xl mb-4">🚀</div>
-        <h2 className="text-2xl font-bold mb-4">场景五：DevOps 自动化部署</h2>
+        <h2 className="text-2xl font-bold mb-4">Scenario 5: DevOps Automated Deployment</h2>
         
         <div className="mb-6">
-          <h3 className="font-semibold mb-2">使用的 Skills</h3>
+          <h3 className="font-semibold mb-2">Skills Used</h3>
           <ul className="list-disc list-inside text-gray-600">
-            <li>ksail - K8s 集群管理</li>
-            <li>deploystack - MCP 部署</li>
+            <li>ksail - K8s cluster management</li>
+            <li>deploystack - MCP deployment</li>
           </ul>
         </div>
 
@@ -209,8 +209,8 @@ export default function UseCasesPage() {
 ┌─────────────────────────────────────────────────────────────┐
 │  🚀 Deployment Pipeline                                      │
 ├─────────────────────────────────────────────────────────────┤
-│  步骤: ✅ 构建 → ✅ 测试 → ✅ 镜像 → 🔄 部署 (75%)           │
-│  📦 v2.4.1 → v2.4.2  |  ⏱️ 预计完成: 3分钟                  │
+│  Steps: ✅ Build → ✅ Test → ✅ Image → 🔄 Deploy (75%)      │
+│  📦 v2.4.1 → v2.4.2  |  ⏱️ ETA: 3 minutes                  │
 └─────────────────────────────────────────────────────────────┘
           `}</pre>
         </div>
@@ -218,15 +218,15 @@ export default function UseCasesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-blue-600">73%↓</div>
-            <div className="text-gray-600">部署时间</div>
+            <div className="text-gray-600">Deployment Time</div>
           </div>
           <div className="bg-green-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-green-600">90%↓</div>
-            <div className="text-gray-600">人工干预</div>
+            <div className="text-gray-600">Manual Intervention</div>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
-            <div className="text-2xl font-bold text-purple-600">分钟级</div>
-            <div className="text-gray-600">回滚速度</div>
+            <div className="text-2xl font-bold text-purple-600">Minutes</div>
+            <div className="text-gray-600">Rollback Speed</div>
           </div>
         </div>
       </section>
@@ -234,13 +234,13 @@ export default function UseCasesPage() {
       {/* Scenario 6: UI Design */}
       <section id="ui-design" className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
         <div className="text-4xl mb-4">🎨</div>
-        <h2 className="text-2xl font-bold mb-4">场景六：AI UI 设计</h2>
+        <h2 className="text-2xl font-bold mb-4">Scenario 6: AI UI Design</h2>
         
         <div className="mb-6">
-          <h3 className="font-semibold mb-2">使用的 Skills</h3>
+          <h3 className="font-semibold mb-2">Skills Used</h3>
           <ul className="list-disc list-inside text-gray-600">
-            <li>lovable-boilerplate - AI UI 脚手架</li>
-            <li>UI/UX Pro Max - 专业设计</li>
+            <li>lovable-boilerplate - AI UI scaffold</li>
+            <li>UI/UX Pro Max - Professional design</li>
           </ul>
         </div>
 
@@ -249,8 +249,8 @@ export default function UseCasesPage() {
 ┌─────────────────────────────────────────────────────────────┐
 │  🎨 AI Generated UI Preview                                  │
 ├─────────────────────────────────────────────────────────────┤
-│  📝 需求: 仪表盘 (用户统计、销售图表、活动列表)              │
-│  ⏱️ 生成: 2分15秒  |  ✅ 质量: A+  |  🎯 符合度: 95%        │
+│  📝 Requirement: Dashboard (User stats, Sales charts, etc.) │
+│  ⏱️ Generated: 2m 15s  |  ✅ Quality: A+  |  🎯 Match: 95%  │
 └─────────────────────────────────────────────────────────────┘
           `}</pre>
         </div>
@@ -258,61 +258,61 @@ export default function UseCasesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-blue-600">120x</div>
-            <div className="text-gray-600">设计效率提升</div>
+            <div className="text-gray-600">Design Efficiency</div>
           </div>
           <div className="bg-green-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-green-600">100%</div>
-            <div className="text-gray-600">代码复用</div>
+            <div className="text-gray-600">Code Reuse</div>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg">
             <div className="text-2xl font-bold text-purple-600">50x</div>
-            <div className="text-gray-600">迭代速度</div>
+            <div className="text-gray-600">Iteration Speed</div>
           </div>
         </div>
       </section>
 
       {/* Summary Table */}
       <section className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-        <h2 className="text-2xl font-bold mb-6">📈 综合效果对比</h2>
+        <h2 className="text-2xl font-bold mb-6">📈 Performance Comparison</h2>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="bg-gray-100">
-                <th className="p-3 text-left">指标</th>
-                <th className="p-3 text-left">使用前</th>
-                <th className="p-3 text-left">使用后</th>
-                <th className="p-3 text-left">提升</th>
+                <th className="p-3 text-left">Metric</th>
+                <th className="p-3 text-left">Before</th>
+                <th className="p-3 text-left">After</th>
+                <th className="p-3 text-left">Improvement</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b">
-                <td className="p-3">开发周期</td>
-                <td className="p-3">3-5天</td>
-                <td className="p-3">1天</td>
+                <td className="p-3">Development Cycle</td>
+                <td className="p-3">3-5 days</td>
+                <td className="p-3">1 day</td>
                 <td className="p-3 text-green-600 font-bold">3-5x</td>
               </tr>
               <tr className="border-b">
-                <td className="p-3">代码审查</td>
-                <td className="p-3">30分钟</td>
-                <td className="p-3">5分钟</td>
+                <td className="p-3">Code Review</td>
+                <td className="p-3">30 minutes</td>
+                <td className="p-3">5 minutes</td>
                 <td className="p-3 text-green-600 font-bold">83%↓</td>
               </tr>
               <tr className="border-b">
-                <td className="p-3">部署时间</td>
-                <td className="p-3">30分钟</td>
-                <td className="p-3">8分钟</td>
+                <td className="p-3">Deployment Time</td>
+                <td className="p-3">30 minutes</td>
+                <td className="p-3">8 minutes</td>
                 <td className="p-3 text-green-600 font-bold">73%↓</td>
               </tr>
               <tr className="border-b">
-                <td className="p-3">知识查找</td>
-                <td className="p-3">小时级</td>
-                <td className="p-3">秒级</td>
+                <td className="p-3">Knowledge Search</td>
+                <td className="p-3">Hours</td>
+                <td className="p-3">Seconds</td>
                 <td className="p-3 text-green-600 font-bold">360x+</td>
               </tr>
               <tr>
-                <td className="p-3">UI 设计</td>
-                <td className="p-3">4小时</td>
-                <td className="p-3">2分钟</td>
+                <td className="p-3">UI Design</td>
+                <td className="p-3">4 hours</td>
+                <td className="p-3">2 minutes</td>
                 <td className="p-3 text-green-600 font-bold">120x</td>
               </tr>
             </tbody>
