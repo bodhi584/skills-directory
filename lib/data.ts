@@ -161,6 +161,112 @@ const rawSkills: any[] = [
     { id: 1001, slug: 'mcp-builder', name: 'MCP Builder', description: 'Create Model Context Protocol servers.', category: 'other' },
     { id: 1002, slug: 'skill-creator', name: 'Skill Creator', description: 'Tools for creating new AI skills.', category: 'other' },
     { id: 1003, slug: 'writing-skills', name: 'Writing Skills', description: 'Syntax and validation for skill files.', category: 'other' },
+
+    // --- ADDITIONAL AGENTS ---
+    { id: 1004, slug: 'swarm-intelligence', name: 'Swarm Intelligence', description: 'Coordination patterns for large-scale agent swarms.', category: 'agents' },
+    { id: 1005, slug: 'agent-orchestration', name: 'Agent Orchestration', description: 'Advanced workflow orchestration for multi-agent systems.', category: 'agents' },
+    { id: 1006, slug: 'task-decomposition', name: 'Task Decomposition', description: 'Break complex tasks into manageable agent subtasks.', category: 'agents' },
+    { id: 1007, slug: 'feedback-loop-agents', name: 'Feedback Loop Agents', description: 'Self-improving agents with feedback mechanisms.', category: 'agents' },
+    { id: 1008, slug: 'hierarchical-agents', name: 'Hierarchical Agents', description: 'Manager-worker agent hierarchies.', category: 'agents' },
+
+    // --- ADDITIONAL CODING ---
+    { id: 1010, slug: 'rust-expert', name: 'Rust Expert', description: 'Systems programming with Rust safety guarantees.', category: 'coding' },
+    { id: 1011, slug: 'go-microservices', name: 'Go Microservices', description: 'Building scalable microservices in Go.', category: 'coding' },
+    { id: 1012, slug: 'api-design', name: 'API Design', description: 'RESTful and GraphQL API best practices.', category: 'coding' },
+    { id: 1013, slug: 'design-patterns', name: 'Design Patterns', description: 'Classic Gang of Four patterns implementation.', category: 'coding' },
+    { id: 1014, slug: 'code-review-automation', name: 'Code Review Automation', description: 'Automated code quality and style checking.', category: 'coding' },
+    { id: 1015, slug: 'refactoring-master', name: 'Refactoring Master', description: 'Safe code refactoring techniques.', category: 'coding' },
+    { id: 1016, slug: 'performance-optimization', name: 'Performance Optimization', description: 'Optimize code for speed and efficiency.', category: 'coding' },
+    { id: 1017, slug: 'testing-strategies', name: 'Testing Strategies', description: 'Unit, integration, and E2E testing patterns.', category: 'coding' },
+    { id: 1018, slug: 'dependency-injection', name: 'Dependency Injection', description: 'Loose coupling with DI containers.', category: 'coding' },
+    { id: 1019, slug: 'domain-driven-design', name: 'Domain-Driven Design', description: 'DDD tactical patterns and bounded contexts.', category: 'coding' },
+
+    // --- ADDITIONAL DATA ---
+    { id: 1020, slug: 'data-pipelines', name: 'Data Pipelines', description: 'ETL and data pipeline orchestration.', category: 'data' },
+    { id: 1021, slug: 'data-visualization', name: 'Data Visualization', description: 'Creating insightful charts and dashboards.', category: 'data' },
+    { id: 1022, slug: 'machine-learning-pipelines', name: 'ML Pipelines', description: 'End-to-end ML workflow automation.', category: 'data' },
+    { id: 1023, slug: 'feature-engineering', name: 'Feature Engineering', description: 'Creating impactful ML features.', category: 'data' },
+    { id: 1024, slug: 'data-quality', name: 'Data Quality', description: 'Data validation and cleansing.', category: 'data' },
+    { id: 1025, slug: 'streaming-analytics', name: 'Streaming Analytics', description: 'Real-time data stream processing.', category: 'data' },
+    { id: 1026, slug: 'big-data-processing', name: 'Big Data Processing', description: 'Distributed computing patterns.', category: 'data' },
+    { id: 1027, slug: 'graph-databases', name: 'Graph Databases', description: 'Neo4j and graph query patterns.', category: 'data' },
+    { id: 1028, slug: 'data-lake-architecture', name: 'Data Lake Architecture', description: 'Modern data lake best practices.', category: 'data' },
+    { id: 1029, slug: 'time-series-analysis', name: 'Time Series Analysis', description: 'Forecasting and trend analysis.', category: 'data' },
+
+    // --- ADDITIONAL SECURITY ---
+    { id: 1030, slug: 'api-security', name: 'API Security', description: 'Securing REST and GraphQL APIs.', category: 'security' },
+    { id: 1031, slug: 'container-security', name: 'Container Security', description: 'Docker and K8s security hardening.', category: 'security' },
+    { id: 1032, slug: 'identity-management', name: 'Identity Management', description: 'OAuth, OIDC, and SSO implementations.', category: 'security' },
+    { id: 1033, slug: 'zero-trust-architecture', name: 'Zero Trust Architecture', description: 'Zero trust security principles.', category: 'security' },
+    { id: 1034, slug: 'cryptography-fundamentals', name: 'Cryptography', description: 'Encryption and security primitives.', category: 'security' },
+    { id: 1035, slug: 'incident-response', name: 'Incident Response', description: 'Security incident handling.', category: 'security' },
+    { id: 1036, slug: 'compliance-auditing', name: 'Compliance Auditing', description: 'SOC2, ISO 27001 compliance checks.', category: 'security' },
+    { id: 1037, slug: 'secrets-management', name: 'Secrets Management', description: 'Vault and secret rotation patterns.', category: 'security' },
+
+    // --- ADDITIONAL PRODUCTIVITY ---
+    { id: 1040, slug: 'meeting-notes', name: 'Meeting Notes', description: 'AI-powered meeting summarization.', category: 'productivity' },
+    { id: 1041, slug: 'task-management', name: 'Task Management', description: 'Organize and prioritize work.', category: 'productivity' },
+    { id: 1042, slug: 'email-automation', name: 'Email Automation', description: 'Smart email workflows.', category: 'productivity' },
+    { id: 1043, slug: 'calendar-management', name: 'Calendar Management', description: 'Scheduling and time blocking.', category: 'productivity' },
+    { id: 1044, slug: 'document-search', name: 'Document Search', description: 'Semantic document discovery.', category: 'productivity' },
+    { id: 1045, slug: 'knowledge-management', name: 'Knowledge Management', description: 'Building and maintaining knowledge bases.', category: 'productivity' },
+    { id: 1046, slug: 'personal-assistant', name: 'Personal Assistant', description: 'Your AI-powered personal helper.', category: 'productivity' },
+    { id: 1047, slug: 'research-assistant', name: 'Research Assistant', description: 'Automated web research and synthesis.', category: 'productivity' },
+
+    // --- ADDITIONAL WRITING ---
+    { id: 1050, slug: 'technical-writing', name: 'Technical Writing', description: 'Documentation and API docs.', category: 'writing' },
+    { id: 1051, slug: 'api-documentation', name: 'API Documentation', description: 'OpenAPI and doc generation.', category: 'writing' },
+    { id: 1052, slug: 'user-guide-writing', name: 'User Guides', description: 'End-user documentation.', category: 'writing' },
+    { id: 1053, slug: 'grant-writing', name: 'Grant Writing', description: 'Research proposal and grant writing.', category: 'writing' },
+    { id: 1054, slug: 'legal-drafting', name: 'Legal Drafting', description: 'Contracts and legal documents.', category: 'writing' },
+    { id: 1055, slug: 'translation', name: 'Translation', description: 'Multi-language content translation.', category: 'writing' },
+    { id: 1056, slug: 'accessibility-writing', name: 'Accessibility Writing', description: 'WCAG-compliant content.', category: 'writing' },
+
+    // --- ADDITIONAL MARKETING ---
+    { id: 1060, slug: 'email-marketing', name: 'Email Marketing', description: 'Campaign automation and templates.', category: 'marketing' },
+    { id: 1061, slug: 'social-media-management', name: 'Social Media Manager', description: 'Cross-platform social scheduling.', category: 'marketing' },
+    { id: 1062, slug: 'content-strategy', name: 'Content Strategy', description: 'Content planning and calendar.', category: 'marketing' },
+    { id: 1063, slug: 'conversion-optimization', name: 'CRO Specialist', description: 'A/B testing and conversion improvement.', category: 'marketing' },
+    { id: 1064, slug: 'analytics-dashboard', name: 'Marketing Analytics', description: 'ROI and metric dashboards.', category: 'marketing' },
+    { id: 1065, slug: 'brand-strategy', name: 'Brand Strategy', description: 'Brand identity and messaging.', category: 'marketing' },
+    { id: 1066, slug: 'community-management', name: 'Community Manager', description: 'Discord and forum engagement.', category: 'marketing' },
+    { id: 1067, slug: 'influencer-outreach', name: 'Influencer Outreach', description: 'Creator partnership automation.', category: 'marketing' },
+
+    // --- ADDITIONAL DEVOPS ---
+    { id: 1070, slug: 'kubernetes-master', name: 'Kubernetes Master', description: 'K8s cluster management.', category: 'devops' },
+    { id: 1071, slug: 'terraform-infrastructure', name: 'Terraform Infrastructure', description: 'Infrastructure as Code.', category: 'devops' },
+    { id: 1072, slug: 'monitoring-observability', name: 'Monitoring & Observability', description: 'Prometheus, Grafana, and tracing.', category: 'devops' },
+    { id: 1073, slug: 'service-mesh', name: 'Service Mesh', description: 'Istio and traffic management.', category: 'devops' },
+    { id: 1074, slug: 'chaos-engineering', name: 'Chaos Engineering', description: 'Resilience testing patterns.', category: 'devops' },
+    { id: 1075, slug: 'gitops-workflows', name: 'GitOps Workflows', description: 'ArgoCD and flux patterns.', category: 'devops' },
+    { id: 1076, slug: 'configuration-management', name: 'Configuration Management', description: 'Ansible and config orchestration.', category: 'devops' },
+    { id: 1077, slug: 'log-aggregation', name: 'Log Aggregation', description: 'ELK stack and log analysis.', category: 'devops' },
+    { id: 1078, slug: 'secrets-injection', name: 'Secrets Injection', description: 'Secure secret distribution.', category: 'devops' },
+    { id: 1079, slug: 'blue-green-deployment', name: 'Blue-Green Deployment', description: 'Zero-downtime deployments.', category: 'devops' },
+
+    // --- ADDITIONAL MEDIA ---
+    { id: 1080, slug: 'image-generation', name: 'Image Generation', description: 'AI image creation and editing.', category: 'media' },
+    { id: 1081, slug: 'video-editing', name: 'AI Video Editing', description: 'Automated video post-production.', category: 'media' },
+    { id: 1082, slug: 'audio-processing', name: 'Audio Processing', description: 'Voice and music AI tools.', category: 'media' },
+    { id: 1083, slug: '3d-modeling', name: '3D Modeling', description: 'AI-assisted 3D creation.', category: 'media' },
+    { id: 1084, slug: 'podcast-production', name: 'Podcast Production', description: 'AI voice and editing.', category: 'media' },
+    { id: 1085, slug: 'visual-effects', name: 'Visual Effects', description: 'VFX composition and rendering.', category: 'media' },
+    { id: 1086, slug: 'motion-graphics', name: 'Motion Graphics', description: 'Animated graphics creation.', category: 'media' },
+    { id: 1087, slug: 'branding-design', name: 'Branding Design', description: 'Logo and brand identity.', category: 'media' },
+    { id: 1088, slug: 'presentation-design', name: 'Presentation Design', description: 'Slides and pitch decks.', category: 'media' },
+    { id: 1089, slug: 'photo-retouching', name: 'Photo Retouching', description: 'AI photo enhancement.', category: 'media' },
+
+    // --- MORE OTHER ---
+    { id: 1090, slug: 'research-tools', name: 'Research Tools', description: 'Academic and scientific research.', category: 'other' },
+    { id: 1091, slug: 'finance-tools', name: 'Finance Tools', description: 'Personal and business finance.', category: 'other' },
+    { id: 1092, slug: 'legal-tools', name: 'Legal Tools', description: 'Legal research and documents.', category: 'other' },
+    { id: 1093, slug: 'education-tools', name: 'Education Tools', description: 'Learning and tutoring assistants.', category: 'other' },
+    { id: 1094, slug: 'healthcare-tools', name: 'Healthcare Tools', description: 'Medical and health AI.', category: 'other' },
+    { id: 1095, slug: 'real-estate-tools', name: 'Real Estate Tools', description: 'Property analysis and listings.', category: 'other' },
+    { id: 1096, slug: 'travel-planning', name: 'Travel Planning', description: 'Trip and itinerary planning.', category: 'other' },
+    { id: 1097, slug: 'recipe-cooking', name: 'Recipe & Cooking', description: 'Recipe generation and meal planning.', category: 'other' },
+    { id: 1098, slug: 'fitness-coaching', name: 'Fitness Coaching', description: 'Workout and nutrition planning.', category: 'other' },
+    { id: 1099, slug: 'music-composition', name: 'Music Composition', description: 'AI music generation.', category: 'other' },
 ];
 
 export const initialSkills: Skill[] = rawSkills.map(skill => ({
