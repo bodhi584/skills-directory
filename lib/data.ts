@@ -267,6 +267,132 @@ const rawSkills: any[] = [
     { id: 1097, slug: 'recipe-cooking', name: 'Recipe & Cooking', description: 'Recipe generation and meal planning.', category: 'other' },
     { id: 1098, slug: 'fitness-coaching', name: 'Fitness Coaching', description: 'Workout and nutrition planning.', category: 'other' },
     { id: 1099, slug: 'music-composition', name: 'Music Composition', description: 'AI music generation.', category: 'other' },
+
+    // --- NEW SKILLS FROM CLAWHUB (2026-02-02) ---
+    // Web & Frontend Development
+    { id: 2001, slug: 'discord-skill', name: 'Discord', description: 'Control Discord from Clawdbot - send messages, react.', category: 'agents' },
+    { id: 2002, slug: 'frontend-design', name: 'Frontend Design', description: 'Create production-grade frontend interfaces.', category: 'media' },
+    { id: 2003, slug: 'slack-skill', name: 'Slack', description: 'Control Slack from Clawdbot.', category: 'agents' },
+    { id: 2004, slug: 'ui-audit', name: 'UI Audit', description: 'Automated UI audits against UX principles.', category: 'media' },
+    { id: 2005, slug: 'ux-audit', name: 'UX Audit', description: 'Automated design audits.', category: 'media' },
+    
+    // Coding Agents
+    { id: 2010, slug: 'agentlens', name: 'AgentLens', description: 'Navigate codebases using hierarchical documentation.', category: 'coding' },
+    { id: 2011, slug: 'claude-team', name: 'Claude Team', description: 'Orchestrate multiple Claude Code workers.', category: 'agents' },
+    { id: 2012, slug: 'cursor-agent', name: 'Cursor Agent', description: 'Use Cursor CLI agent for coding tasks.', category: 'coding' },
+    { id: 2013, slug: 'factory-ai', name: 'Factory AI', description: 'Factory AI droid CLI for software engineering.', category: 'coding' },
+    
+    // Git & GitHub
+    { id: 2020, slug: 'conventional-commits', name: 'Conventional Commits', description: 'Format commits using Conventional Commits spec.', category: 'coding' },
+    { id: 2021, slug: 'github-cli', name: 'GitHub CLI', description: 'Interact with GitHub using gh CLI.', category: 'coding' },
+    { id: 2022, slug: 'github-pr', name: 'GitHub PR', description: 'Fetch, preview, merge, test PRs locally.', category: 'coding' },
+    { id: 2023, slug: 'deepwiki', name: 'DeepWiki', description: 'Query GitHub repository documentation.', category: 'data' },
+    
+    // DevOps & Cloud
+    { id: 2030, slug: 'azure-cli', name: 'Azure CLI', description: 'Manage Azure Cloud Platform.', category: 'devops' },
+    { id: 2031, slug: 'cloudflare-wrangler', name: 'Cloudflare Workers', description: 'Manage Workers, KV, D1, R2 using Wrangler.', category: 'devops' },
+    { id: 2032, slug: 'digital-ocean', name: 'Digital Ocean', description: 'Manage droplets, domains, infrastructure.', category: 'devops' },
+    { id: 2033, slug: 'hetzner-cloud', name: 'Hetzner Cloud', description: 'Manage servers, volumes, firewalls, DNS.', category: 'devops' },
+    { id: 2034, slug: 'kubectl-skill', name: 'Kubernetes kubectl', description: 'Execute and manage K8s clusters.', category: 'devops' },
+    { id: 2035, slug: 'tailscale', name: 'Tailscale', description: 'Manage tailnet via CLI and API.', category: 'devops' },
+    { id: 2036, slug: 'vercel-cli', name: 'Vercel CLI', description: 'Deploy and manage Vercel projects.', category: 'devops' },
+    { id: 2037, slug: 'flyio-cli', name: 'Fly.io CLI', description: 'Deploy, logs, SSH, secrets, scaling.', category: 'devops' },
+    { id: 2038, slug: 'portainer', name: 'Portainer', description: 'Control Docker via Portainer API.', category: 'devops' },
+    { id: 2039, slug: 'supabase-skill', name: 'Supabase', description: 'Database operations, vector search, storage.', category: 'data' },
+    
+    // Browser & Automation
+    { id: 2040, slug: 'agent-browser', name: 'Agent Browser', description: 'Rust-based headless browser automation.', category: 'agents' },
+    { id: 2041, slug: 'browser-use', name: 'Browser Use', description: 'Cloud-based browser automation.', category: 'agents' },
+    { id: 2042, slug: 'playwright-cli', name: 'Playwright CLI', description: 'Browser automation for testing.', category: 'agents' },
+    
+    // Image & Video
+    { id: 2050, slug: 'comfyui-skill', name: 'ComfyUI', description: 'Install, manage, run ComfyUI instances.', category: 'media' },
+    { id: 2051, slug: 'fal-ai', name: 'Fal.ai', description: 'Generate images, videos, audio.', category: 'media' },
+    { id: 2052, slug: 'gamma-presentation', name: 'Gamma', description: 'AI-powered presentations and documents.', category: 'media' },
+    { id: 2053, slug: 'pollinations-ai', name: 'Pollinations.ai', description: 'Text, images, videos, audio with 25+ models.', category: 'media' },
+    { id: 2054, slug: 'veo-video', name: 'Google Veo', description: 'Generate video using Google Veo.', category: 'media' },
+    { id: 2055, slug: 'venice-ai', name: 'Venice AI', description: 'Image/video generation, upscaling.', category: 'media' },
+    { id: 2056, slug: 'figma-skill', name: 'Figma', description: 'Design analysis, asset export, audit.', category: 'media' },
+    
+    // Search & Research
+    { id: 2060, slug: 'brave-search', name: 'Brave Search', description: 'Web search and content extraction.', category: 'productivity' },
+    { id: 2061, slug: 'exa-search', name: 'Exa Search', description: 'Neural web search and code context.', category: 'productivity' },
+    { id: 2062, slug: 'kagi-search', name: 'Kagi Search', description: 'Web search using Kagi API.', category: 'productivity' },
+    { id: 2063, slug: 'tavily-search', name: 'Tavily Search', description: 'AI-optimized web search.', category: 'productivity' },
+    { id: 2064, slug: 'perplexity-search', name: 'Perplexity', description: 'Web-grounded search with citations.', category: 'productivity' },
+    { id: 2065, slug: 'youtube-summarizer', name: 'YouTube Summarizer', description: 'Fetch transcripts and generate summaries.', category: 'productivity' },
+    { id: 2066, slug: 'arxiv-watcher', name: 'ArXiv Watcher', description: 'Search and summarize papers.', category: 'productivity' },
+    { id: 2067, slug: 'news-aggregator', name: 'News Aggregator', description: 'News from Hacker News, GitHub Trending.', category: 'productivity' },
+    
+    // Apple Apps
+    { id: 2070, slug: 'apple-contacts', name: 'Apple Contacts', description: 'Look up macOS Contacts.app.', category: 'productivity' },
+    { id: 2071, slug: 'apple-music', name: 'Apple Music', description: 'Search, add songs, control playback.', category: 'media' },
+    { id: 2072, slug: 'apple-photos', name: 'Apple Photos', description: 'List albums, browse, search photos.', category: 'media' },
+    { id: 2073, slug: 'homebrew-skill', name: 'Homebrew', description: 'Manage macOS packages and casks.', category: 'devops' },
+    { id: 2074, slug: 'apple-remind-me', name: 'Apple Reminders', description: 'Natural language reminders.', category: 'productivity' },
+    { id: 2075, slug: 'apple-mail-search', name: 'Apple Mail Search', description: 'Fast mail search via SQLite.', category: 'productivity' },
+    
+    // Marketing & Sales
+    { id: 2080, slug: 'apollo-io', name: 'Apollo.io', description: 'People/org enrichment, search, lists.', category: 'marketing' },
+    { id: 2081, slug: 'twitter-bird', name: 'Twitter/X CLI', description: 'Read, search, post via CLI.', category: 'marketing' },
+    { id: 2082, slug: 'bluesky-skill', name: 'Bluesky', description: 'Read, post, interact with Bluesky.', category: 'marketing' },
+    { id: 2083, slug: 'reddit-skill', name: 'Reddit', description: 'Browse, search, post, moderate.', category: 'marketing' },
+    { id: 2084, slug: 'ga4-analytics', name: 'GA4 Analytics', description: 'Query Google Analytics 4 data.', category: 'marketing' },
+    { id: 2085, slug: 'gong-crm', name: 'Gong', description: 'Search calls, transcripts, intelligence.', category: 'marketing' },
+    { id: 2086, slug: 'google-ads', name: 'Google Ads', description: 'Query, audit, optimize campaigns.', category: 'marketing' },
+    { id: 2087, slug: 'gsc-seo', name: 'Google Search Console', description: 'SEO data - queries, CTR opportunities.', category: 'marketing' },
+    { id: 2088, slug: 'hubspot-crm', name: 'HubSpot', description: 'CRM and CMS integration.', category: 'marketing' },
+    { id: 2089, slug: 'otter-transcription', name: 'Otter.ai', description: 'Meeting transcription and sync.', category: 'productivity' },
+    { id: 2090, slug: 'marketing-mode', name: 'Marketing Mode', description: '23 marketing playbooks covering CRO, SEO.', category: 'marketing' },
+    
+    // Productivity & Tasks
+    { id: 2100, slug: 'linear-issue', name: 'Linear', description: 'Issue tracking CLI.', category: 'productivity' },
+    { id: 2101, slug: 'basecamp-cli', name: 'Basecamp', description: 'Manage projects, to-dos, messages.', category: 'productivity' },
+    { id: 2102, slug: 'bearblog', name: 'Bear Blog', description: 'Create and manage blog posts.', category: 'writing' },
+    { id: 2103, slug: 'twenty-crm', name: 'Twenty CRM', description: 'Self-hosted CRM interaction.', category: 'marketing' },
+    { id: 2104, slug: 'linkding-bookmarks', name: 'Linkding', description: 'Save URLs, search, tag bookmarks.', category: 'productivity' },
+    
+    // CLI Utilities
+    { id: 2110, slug: 'duckdb-cli', name: 'DuckDB', description: 'SQL analysis, data processing.', category: 'data' },
+    { id: 2111, slug: 'jq-json', name: 'JQ', description: 'Command-line JSON processor.', category: 'coding' },
+    { id: 2112, slug: 'entr-file-watch', name: 'Entr', description: 'Run commands when files change.', category: 'coding' },
+    { id: 2113, slug: 'gifgrep', name: 'GIF Grep', description: 'Search GIF providers.', category: 'media' },
+    { id: 2114, slug: 'goplaces', name: 'Google Places', description: 'Query Google Places API.', category: 'productivity' },
+    { id: 2115, slug: 'local-places', name: 'Local Places', description: 'Search restaurants, cafes.', category: 'productivity' },
+    { id: 2116, slug: 'tmdb-movies', name: 'TMDb', description: 'Search movies/TV, cast, ratings.', category: 'entertainment' },
+    { id: 2117, slug: 'xkcd-comic', name: 'XKCD', description: 'Fetch xkcd comics.', category: 'entertainment' },
+    { id: 2118, slug: 'cat-fact', name: 'Cat Fact', description: 'Random cat facts.', category: 'entertainment' },
+    { id: 2119, slug: 'sag-voice', name: 'SAG Voice', description: 'ElevenLabs text-to-speech.', category: 'media' },
+    { id: 2120, slug: 'tmux-skill', name: 'Tmux', description: 'Remote-control tmux sessions.', category: 'agents' },
+    { id: 2121, slug: 'process-watch', name: 'Process Watch', description: 'Monitor system processes.', category: 'devops' },
+    { id: 2122, slug: 'tldr-man', name: 'TLDR', description: 'Simplified man pages.', category: 'productivity' },
+    { id: 2123, slug: 'steam-library', name: 'Steam', description: 'Browse and discover games.', category: 'entertainment' },
+    
+    // iOS & macOS Development
+    { id: 2130, slug: 'apple-docs', name: 'Apple Docs', description: 'Query Apple Developer Documentation.', category: 'coding' },
+    { id: 2131, slug: 'ios-simulator', name: 'iOS Simulator', description: 'Automate iOS Simulator workflows.', category: 'coding' },
+    { id: 2132, slug: 'swiftui-expert', name: 'SwiftUI Expert', description: 'SwiftUI views and components.', category: 'coding' },
+    { id: 2133, slug: 'swift-concurrency', name: 'Swift Concurrency', description: 'Swift Concurrency review.', category: 'coding' },
+    
+    // Security
+    { id: 2140, slug: 'skills-audit', name: 'Skills Audit', description: 'Audit skills for security issues.', category: 'security' },
+    { id: 2141, slug: 'secrets-management', name: 'Secrets Management', description: 'Vault and secret rotation.', category: 'security' },
+    
+    // Notes & PKM
+    { id: 2150, slug: 'triple-memory', name: 'Triple Memory', description: 'LanceDB + Git-Notes memory system.', category: 'productivity' },
+    { id: 2151, slug: 'git-notes-memory', name: 'Git Notes Memory', description: 'Persistent memory across sessions.', category: 'productivity' },
+    { id: 2152, slug: 'self-reflect', name: 'Self Reflect', description: 'Self-improvement through analysis.', category: 'productivity' },
+    
+    // Communication
+    { id: 2160, slug: 'mcporter', name: 'MCPorter', description: 'List, configure, call MCP servers.', category: 'agents' },
+    { id: 2161, slug: 'clawdhub-search', name: 'ClawdHub', description: 'Search, install, publish skills.', category: 'other' },
+    { id: 2162, slug: 'skills-search', name: 'Skills Search', description: 'Search skills.sh registry.', category: 'other' },
+    
+    // Finance
+    { id: 2170, slug: 'george-banking', name: 'George Banking', description: 'Online banking automation.', category: 'other' },
+    
+    // Smart Home & IoT
+    { id: 2180, slug: 'smart-home', name: 'Smart Home', description: 'Control IoT devices.', category: 'other' },
 ];
 
 export const initialSkills: Skill[] = rawSkills.map(skill => ({
