@@ -1,11 +1,36 @@
 import Link from 'next/link';
+import fs from 'fs';
+import path from 'path';
 
 export const metadata = {
   title: 'Skill Reviews - Antigravity Skills',
   description: 'Real-world reviews and testing of AI Agent Skills.',
 };
 
-const reviews = [
+// Get daily review files
+function getDailyReviews() {
+  const reviewsDir = path.join(process.cwd(), 'content/daily-reviews');
+  const files = fs.readdirSync(reviewsDir).filter(f => f.endsWith('.md'));
+  
+  return files.map(file => {
+    const content = fs.readFileSync(path.join(reviewsDir, file), 'utf-8');
+    const date = file.replace('.md', '');
+    
+    // Extract title from frontmatter
+    const titleMatch = content.match(/title:\s*["']?([^"'\n]+)["']?/);
+    const title = titleMatch ? titleMatch[1] : `Daily Review ${date}`;
+    
+    return {
+      slug: date,
+      title: title,
+      date: date,
+      tags: ['Daily', 'Auto-generated'],
+      readTime: '2 min',
+    };
+  }).sort((a, b) => b.date.localeCompare(a.date));
+}
+
+const allReviews = [
   {
     slug: 'skill-reviews',
     title: 'OpenClaw Skills 体验评测',
@@ -33,6 +58,9 @@ const reviews = [
 ];
 
 export default function ReviewsPage() {
+  const dailyReviews = getDailyReviews();
+  const totalTested = 8 + dailyReviews.length * 10;
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <header className="mb-12">
@@ -51,19 +79,53 @@ export default function ReviewsPage() {
           <p className="text-gray-700 mb-4">
             每天晚上10点自动测试10个新的Skills，并生成评测报告。
           </p>
-          <div className="text-sm text-gray-600">
-            <p>📊 已测试: 8+ Skills</p>
+          <div className="text-sm text-gray-600 grid grid-cols-3 gap-4">
+            <p>📊 已测试: {totalTested}+ Skills</p>
             <p>📦 技能库: 1200+ Skills</p>
             <p>⏰ 下次更新: 明天早上</p>
           </div>
         </div>
+
+        {/* Daily Review List */}
+        {dailyReviews.length > 0 && (
+          <div className="space-y-4">
+            {dailyReviews.map((review) => (
+              <article
+                key={review.slug}
+                className="border rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
+                      <span>{review.date}</span>
+                      <span>•</span>
+                      <span>{review.readTime}</span>
+                    </div>
+                    <Link
+                      href={`/daily-reviews/${review.slug}`}
+                      className="text-xl font-bold hover:text-blue-600"
+                    >
+                      {review.title}
+                    </Link>
+                  </div>
+                  <Link
+                    href={`/daily-reviews/${review.slug}`}
+                    className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                  >
+                    Read →
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* All Reviews */}
       <section>
         <h2 className="text-2xl font-bold mb-6">📚 All Reviews</h2>
         <div className="space-y-8">
-          {reviews.map((review) => (
+          {allReviews.map((review) => (
             <article
               key={review.slug}
               className="border rounded-lg p-6 hover:shadow-lg transition-shadow"
@@ -107,6 +169,7 @@ export default function ReviewsPage() {
 
       <footer className="mt-12 pt-8 border-t text-center text-gray-500">
         <p>More reviews coming soon...</p>
+        <p className="text-sm mt-2">🤖 Powered by OpenClaw Auto-Review System</p>
       </footer>
     </div>
   );
