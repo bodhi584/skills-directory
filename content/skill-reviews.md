@@ -207,6 +207,99 @@ python3 scripts/fetch_news.py --source hackernews --keyword "AI,LLM" --limit 10
 
 ---
 
+### ✅ jq - JSON命令行处理器
+
+**简介**: 命令行JSON处理工具，提取、过滤、转换JSON
+
+**安装状态**: ✅ 系统已安装 (`/usr/bin/jq`)
+
+**评价**: ⭐⭐⭐⭐⭐
+- 优点: 轻量级、速度快、语法简洁、功能强大
+- 适用场景: API响应处理、数据提取、JSON转换
+- 缺点: 学习曲线稍陡
+
+**实测结果**:
+```bash
+$ echo '{"name": "Bodhi", "skills": ["github", "xkcd"], "rating": 5}' | jq '.name'
+# ✅ 输出: "Bodhi"
+
+$ echo '{"name": "Bodhi"}' | jq '. + {"new": "value"}'
+# ✅ 输出: {"name": "Bodhi", "new": "value"}
+```
+
+**使用示例**:
+```bash
+# 提取嵌套字段
+cat api.json | jq '.data.items[0].name'
+
+# 过滤数据
+cat data.json | jq '.[] | select(.age > 25)'
+
+# 转换格式
+cat data.json | jq '{name: .user, score: .points}'
+```
+
+---
+
+### ✅ conventional-commits - 规范化提交
+
+**简介**: 规范化Git提交信息格式，符合Conventional Commits标准
+
+**安装状态**: ✅ 无需安装（纯文档Skill）
+
+**评价**: ⭐⭐⭐⭐
+- 优点: 自动生成CHANGELOG、语义化版本控制、团队协作规范
+- 适用场景: 项目规范化、CI/CD集成、版本发布
+- 缺点: 需要团队遵守规范
+
+**支持的提交类型**:
+- `feat:` - 新功能 (MINOR版本)
+- `fix:` - Bug修复 (PATCH版本)
+- `docs:` - 文档更新
+- `style:` - 代码格式
+- `refactor:` - 重构
+- `perf:` - 性能优化
+- `test:` - 测试
+- `build:` - 构建系统
+- `ci:` - CI/CD配置
+- `chore:` - 其他维护
+
+**使用示例**:
+```bash
+feat(auth): add login functionality
+fix(database): resolve connection timeout
+docs(readme): update installation guide
+```
+
+---
+
+### ⏳ vercel - Vercel CLI
+
+**简介**: 部署和管理Vercel项目
+
+**安装状态**: 🔄 安装中 (npm install -g vercel)
+**预计测试时间**: 安装完成后
+
+---
+
+### ⏳ pollinations - AI图像生成
+
+**简介**: Pollinations.ai API支持文本、图像、视频、音频生成（25+模型）
+
+**安装状态**: ⚠️ 需要API key（之前免费，现在需要认证）
+**前置条件**: `export POLLINATIONS_API_KEY="sk_xxx"`
+
+---
+
+### ⏳ sag - ElevenLabs语音合成
+
+**简介**: ElevenLabs TTS，支持多种语音和声音效果
+
+**安装状态**: ⚠️ 需要安装和API key
+**安装命令**: `brew install steipete/tap/sag` 或 `npm install -g sag`
+
+---
+
 ## 🔄 待测试 Skills
 
 ### 🚧 apple-contacts - Apple通讯录
@@ -217,68 +310,49 @@ python3 scripts/fetch_news.py --source hackernews --keyword "AI,LLM" --limit 10
 - **状态**: 需要macOS + Apple Music订阅
 - **预计测试时间**: 在Mac上测试
 
-### 🚧 vercel - Vercel CLI
-- **状态**: 需要Vercel账户
-- **预计测试时间**: 下一轮测试
-
 ### 🚧 claude-team - Claude团队协作
 - **状态**: 需要Claude Team订阅
 - **预计测试时间**: 待定
 
----
+### 🚧 gamma - AI演示文稿
+- **状态**: 需要GAMMA_API_KEY
+- **预计测试时间**: 申请API key后
 
-## 📝 测试方法论
+### 🚧 tmdb - 电影数据库
+- **状态**: 需要TMDB_API_KEY
+- **预计测试时间**: 申请API key后
 
-### 评分标准 (1-5 ⭐)
+### 🚧 youtube-summarizer - YouTube摘要
+- **状态**: 需要MCP YouTube Transcript服务器
+- **预计测试时间**: 配置MCP服务器后
 
-1. **易用性**: 安装和配置的难易程度
-2. **实用性**: 对实际工作的帮助程度
-3. **稳定性**: 运行是否稳定，错误处理如何
-4. **文档质量**: SKILL.md是否清晰易懂
-5. **性价比**: 免费vs付费，功能vs成本
+### 🚧 read-github - GitHub文档阅读
+- **状态**: 需要gitmcp.io MCP服务
+- **预计测试时间**: 配置MCP后
 
-### 测试流程
-
-1. **阅读文档**: 先读SKILL.md了解用法
-2. **环境准备**: 安装必要依赖
-3. **基本测试**: 运行最简单的命令
-4. **进阶测试**: 测试高级功能
-5. **记录结果**: 记录成功/失败经验
-6. **撰写评测**: 总结优缺点和使用建议
+### 🚧 perplexity - AI搜索
+- **状态**: 需要Perplexity API key
+- **预计测试时间**: 申请API key后
 
 ---
 
 ## 💡 最佳实践
 
-### 推荐的入门Skills
+### 推荐的入门Skills (无需API key)
 
-1. **tldr** - 快速学习命令行工具
-2. **github** - 管理GitHub仓库
-3. **brave-search** - 快速搜索信息
-4. **xkcd** - 轻松一下
+1. **jq** - JSON处理，命令行必备
+2. **github** - GitHub仓库管理
+3. **news-aggregator** - 新闻聚合
+4. **xkcd** - 轻松一刻
+5. **conventional-commits** - 提交规范
 
-### 进阶Skills推荐
+### 进阶Skills推荐 (需要配置)
 
-1. **vercel** - 部署网站
-2. **comfy-cli** - AI图像生成
-3. **marketing-mode** - 营销策略
-4. **triple-memory** - 记忆系统
-
----
-
-## 🔧 常见问题
-
-### Q: Skills安装后如何激活?
-A: 重启OpenClaw会话即可自动加载
-
-### Q: 有些Skills报错怎么办?
-A: 
-1. 检查SKILL.md中的前置条件
-2. 确认依赖已安装
-3. 查看环境变量是否设置
-
-### Q: 如何贡献评测?
-A: 在GitHub仓库提交PR，添加新的评测文件
+1. **vercel** - 网站部署
+2. **sag** - 语音合成
+3. **gamma** - 演示文稿生成
+4. **pollinations** - AI图像生成
+5. **triple-memory** - 记忆系统
 
 ---
 
@@ -286,11 +360,11 @@ A: 在GitHub仓库提交PR，添加新的评测文件
 
 | 指标 | 数值 |
 |------|------|
-| 已测试Skills | 6 |
-| 待测试Skills | 84+ |
+| 已测试Skills | 8 |
+| 待测试Skills | 82+ |
 | 平均评分 | ⭐⭐⭐⭐ |
 
 ---
 
-*最后更新: 2026-02-02 18:00*
+*最后更新: 2026-02-02 19:45*
 *由 Bodhi 生成*
