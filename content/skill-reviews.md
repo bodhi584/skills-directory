@@ -1,11 +1,16 @@
 # OpenClaw Skills 体验评测
 
-> 真实使用体验 • 持续更新
+> 真实使用体验 • 持续更新 • **Review是核心内容**
+
+## 📖 Review指南
+
+- [Review框架规范](/review-framework) - 统一格式和标准
+- [Review待办清单](/review-todo) - 追踪进度和计划
 
 ## 测试环境
-- **OpenClaw版本**: 最新
-- **测试时间**: 2026-02-02
+- **OpenClaw版本**: 2026.1.29
 - **Skills位置**: `~/.agent/skills/`
+- **已安装**: 90+ 核心Skills + 1200+ 完整库
 
 ---
 
