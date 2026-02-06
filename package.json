@@ -1,30 +1,24 @@
 {
-  "name": "skills-directory",
-  "version": "0.1.0",
-  "private": true,
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
   "dependencies": {
-    "next": "16.1.4",
-    "next-auth": "^5.0.0-beta.30",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "axios": "^1.13.4",
+    "googleapis": "^171.2.0"
   },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.4",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "download_feishu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/bodhi584/openclaw-memory-backup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bodhi584/openclaw-memory-backup/issues"
+  },
+  "homepage": "https://github.com/bodhi584/openclaw-memory-backup#readme"
 }
