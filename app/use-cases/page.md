@@ -249,6 +249,8 @@
 | **代码审查** | 30分钟 | 5分钟 | 83%↓ |
 | **知识查找** | 小时级 | 秒级 | 360x+ |
 | **UI 设计** | 4小时 | 2分钟 | 120x |
+| **页面停留时间** | 25秒 | 120秒+ | 480%↑ |
+| **技术债务** | 持续增长 | 系统管理 | 可控化 |
 
 ---
 
@@ -277,6 +279,7 @@
 | 知识库 | haiku.rag + flapi | 秒级问答 |
 | 部署运维 | ksail + deploystack | 10x 部署效率 |
 | UI 设计 | lovable-boilerplate + UI/UX Pro Max | 100x 设计效率 |
+| **代码质量优化** | **Code Quality & Refactoring + Performance Optimization** | **480%+ 页面停留时间提升** |
 
 ---
 

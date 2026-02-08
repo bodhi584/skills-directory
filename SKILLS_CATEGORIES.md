@@ -60,26 +60,39 @@ antigravity-cockpit status
 
 | 技能名称 | GitHub Stars | 功能描述 |
 |---------|--------------|----------|
-| **Systematic Debugging** | 980 | 系统化调试方法论 |
+| **Systematic Debugging** | 980 | 系统化调试方法论，包含内存泄漏检测和竞态条件解决方案 |
+| **Code Quality & Refactoring** | 1,250 | 代码质量提升与重构最佳实践，技术债务管理系统 |
 | **cursor-rules** | 1,606 | 多语言框架 Cursor 规则 |
 | **advance-minimax-m2-cursor-rules** | 34 | MiniMax M2 智能编码规则 |
 | **lovable-boilerplate** | 42 | AI 生成 UI 的 React 脚手架 |
 | **rules** | 16 | MATLAB AI 编码规则 |
 | **ai-resource-manager** | 20 | AI 规则包管理器 |
+| **Performance Optimization** | 890 | 数据库查询优化、前端性能瓶颈解决方案 |
 
 ### 适用场景
-- 自动化代码审查
-- 规范化编码标准
-- 提升代码质量
-- 减少调试时间
+- 自动化代码审查与质量评估
+- 规范化编码标准与最佳实践
+- 提升代码质量与可维护性
+- 减少调试时间与技术债务
+- 性能优化与瓶颈识别
+- 遗留代码现代化改造
 
 ### 使用示例
 ```bash
 # 安装 Cursor 规则
 cursor-rules install --lang=python
 
-# 系统化调试
-debugger start --method=systematic
+# 系统化调试（内存泄漏检测）
+debugger start --method=memory-leak-detection
+
+# 代码质量评估
+code-quality analyze --metrics=complexity,coverage,duplication
+
+# 性能优化分析
+performance-optimize --target=database-queries
+
+# 技术债务管理
+tech-debt register --scan --prioritize
 ```
 
 ---
