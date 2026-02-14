@@ -22,28 +22,44 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         return { title: 'Skill Not Found - Antigravity Skills' };
     }
 
-    // SEO-optimized title with trending keywords
-    const seoTitle = `${skill.name} - AI Skill for Claude, Cursor & Gemini | Antigravity Skills`;
+    // SEO-optimized title with trending keywords and Cursor focus
+    const seoTitle = `${skill.name} - AI Skill for Cursor, Claude & Gemini | Antigravity Skills`;
 
-    // Rich description with keywords
-    const seoDescription = `${skill.description} Learn how to use ${skill.name} skill with Claude Code, Cursor, Gemini CLI and Antigravity agents. Free download and installation guide.`;
+    // Rich description with keywords optimized for Cursor users
+    const seoDescription = `${skill.description} Master ${skill.name} with Cursor IDE, Claude Code, and Gemini CLI. Professional AI skill for developers seeking productivity boost. Free installation and usage guide.`;
 
-    // Combine skill tags with trending keywords
+    // Enhanced SEO keywords with Cursor-specific terms and trending phrases
     const seoKeywords = [
         skill.name.toLowerCase(),
         `${skill.name.toLowerCase()} skill`,
         `${skill.name.toLowerCase()} ai skill`,
+        `${skill.name.toLowerCase()} cursor`,
+        `${skill.name.toLowerCase()} cursor plugin`,
+        `${skill.name.toLowerCase()} cursor extension`,
         ...skill.tags,
         skill.category,
-        // Trending keywords from search data
+        // Primary platform keywords
+        'cursor skills',
+        'cursor plugins',
+        'cursor extensions',
+        'cursor ide',
+        'cursor ai',
+        'cursor coding',
+        // Secondary platform keywords
         'antigravity skills',
         'claude code skills',
         'gemini agent skills',
-        'cursor skills',
         'ai skills',
         'agent skills',
         'mcp',
         'awesome skills',
+        // Trending developer keywords
+        'ai coding assistant',
+        'developer productivity',
+        'code automation',
+        'programming ai',
+        'software development tools',
+        'ai developer tools',
     ];
 
     return {

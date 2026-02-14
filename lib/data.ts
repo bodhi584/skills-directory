@@ -268,6 +268,11 @@ const rawSkills: any[] = [
     { id: 1098, slug: 'fitness-coaching', name: 'Fitness Coaching', description: 'Workout and nutrition planning.', category: 'other' },
     { id: 1099, slug: 'music-composition', name: 'Music Composition', description: 'AI music generation.', category: 'other' },
 
+    // --- NEW CURSOR SKILLS (2026-02-14) ---
+    { id: 3001, slug: 'cursor-multi-agent-orchestrator', name: 'Cursor Multi-Agent Orchestrator', description: 'Orchestrate multiple Cursor agents for complex development workflows.', category: 'agents', stars: 850 },
+    { id: 3002, slug: 'cursor-code-review-pro', name: 'Cursor Code Review Pro', description: 'Advanced code review with AI-powered quality assessment and best practices.', category: 'coding', stars: 920 },
+    { id: 3003, slug: 'cursor-performance-analyzer', name: 'Cursor Performance Analyzer', description: 'AI-powered performance analysis and optimization recommendations.', category: 'coding', stars: 780 },
+
     // --- NEW SKILLS FROM CLAWHUB (2026-02-02) ---
     // Web & Frontend Development
     { id: 2001, slug: 'discord-skill', name: 'Discord', description: 'Control Discord from Clawdbot - send messages, react.', category: 'agents' },
