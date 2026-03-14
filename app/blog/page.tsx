@@ -7,6 +7,14 @@ export const metadata = {
 
 const blogPosts = [
   {
+    slug: 'how-to-maintain-ai-agent',
+    title: '如何维护 AI Agent Skills - 完整指南',
+    excerpt: '本文介绍如何有效维护和管理你的 AI Agent Skills，保持最佳性能。',
+    date: '2026-03-14',
+    tags: ['AI Agents', 'Maintenance', 'Tutorial'],
+    readTime: '5 min',
+  },
+  {
     slug: 'what-are-ai-agent-skills',
     title: 'What Are AI Agent Skills? A Complete Guide for 2025',
     excerpt: 'The rise of AI agents demands a new paradigm for capability management. Learn what skills are and why they matter.',
