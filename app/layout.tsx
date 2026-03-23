@@ -17,8 +17,8 @@ const siteUrl = "https://www.antigravityskills.org";
 const totalSkills = `${initialSkills.length}+`;
 
 export const metadata: Metadata = {
-  title: "Antigravity Skills - Find Awesome AI Agent Skills for Claude, Cursor & Gemini",
-  description: `The largest collection of AI Skills for Google Antigravity, Claude Code, Cursor, Gemini CLI and other AI agents. ${totalSkills} curated awesome skills for agent development, MCP servers, and AI automation.`,
+  title: "Antigravity Skills - Security-Reviewed AI Skills for Claude, Cursor & Gemini",
+  description: `Discover ${totalSkills} security-reviewed AI skills for Claude Code, Cursor, Gemini CLI, and Antigravity. Browse public previews, then register to unlock full install guides, compatibility checks, and safety reviews.`,
   keywords: [
     // Top trending keywords from search data
     "antigravity skills",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   creator: "Antigravity Skills",
   publisher: "Antigravity Skills",
   openGraph: {
-    title: "Antigravity Skills - Awesome AI Agent Skills Directory",
-    description: `${totalSkills} curated AI Skills for Claude Code, Cursor, Gemini CLI and Google Antigravity agents.`,
+    title: "Antigravity Skills - Security-Reviewed AI Skills Directory",
+    description: `${totalSkills} security-reviewed AI skills for Claude Code, Cursor, Gemini CLI, and Antigravity with member-only install guides and safety details.`,
     url: siteUrl,
     siteName: "Antigravity Skills",
     type: "website",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Antigravity Skills - AI Agent Skills Directory",
-    description: `${totalSkills} curated AI Skills for Claude, Cursor, Gemini and Antigravity agents.`,
+    title: "Antigravity Skills - Security-Reviewed AI Skills",
+    description: `${totalSkills} security-reviewed AI skills with public previews and member-only install guides for Claude, Cursor, Gemini, and Antigravity.`,
   },
   robots: {
     index: true,
