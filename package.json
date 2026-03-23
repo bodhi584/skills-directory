@@ -1,24 +1,19 @@
 {
+  "name": "skills-directory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Antigravity Skills - curated directory for AI agent skills",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "axios": "^1.13.4",
-    "googleapis": "^171.2.0"
-  },
-  "name": "workspace",
-  "version": "1.0.0",
-  "description": "",
-  "main": "download_feishu.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://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@github.com/bodhi584/openclaw-memory-backup.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bodhi584/openclaw-memory-backup/issues"
-  },
-  "homepage": "https://github.com/bodhi584/openclaw-memory-backup#readme"
+    "googleapis": "^171.2.0",
+    "next": "16.1.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  }
 }
