@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getSkillBySlug, initialSkills } from '@/lib/data';
 import CopyButton from '@/components/CopyButton';
+import RelatedSkills from '@/components/RelatedSkills';
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -487,6 +488,9 @@ export default async function SkillPage({ params }: PageProps) {
                         View on GitHub
                     </Link>
                 )}
+
+                {/* Related Skills & Popular Skills */}
+                <RelatedSkills currentSkill={skill} />
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import SearchBox from '@/components/SearchBox';
 import SkillCard from '@/components/SkillCard';
 import SkillCardSkeleton from '@/components/SkillCardSkeleton';
-import { getFeaturedSkills, getLatestSkills, getCategoriesWithCount, initialSkills } from '@/lib/data';
+import { getFeaturedSkills, getLatestSkills, getCategoriesWithCount, getPopularSkills, initialSkills } from '@/lib/data';
 
 function FeaturedSkillsSection() {
   const featuredSkills = getFeaturedSkills();
@@ -40,6 +40,28 @@ function LatestSkillsSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {latestSkills.map(skill => (
+          <SkillCard key={skill.id} skill={skill} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TrendingSkillsSection() {
+  const trendingSkills = getPopularSkills(6);
+
+  return (
+    <section className="mb-16">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+          🔥 Trending Skills
+        </h2>
+        <Link href="/explore?sort=popular" className="text-[#c26148] text-sm font-medium hover:opacity-80">
+          View All →
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {trendingSkills.map(skill => (
           <SkillCard key={skill.id} skill={skill} />
         ))}
       </div>
@@ -110,6 +132,11 @@ export default function Home() {
         {/* Featured Skills with Suspense */}
         <Suspense fallback={<SkillsLoadingSkeleton />}>
           <FeaturedSkillsSection />
+        </Suspense>
+
+        {/* Trending Skills */}
+        <Suspense fallback={<SkillsLoadingSkeleton />}>
+          <TrendingSkillsSection />
         </Suspense>
 
         {/* Categories */}

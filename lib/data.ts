@@ -1,4 +1,5 @@
-import { Skill, Category, SkillsResponse, SearchParams } from './types';
+import type { Skill, Category, SkillsResponse, SearchParams } from './types';
+export type { Skill, Category };
 
 export const categories: Category[] = [
     { id: 1, slug: 'agents', name: 'AI Agents', description: 'Skills for building and orchestrating autonomous agents', icon: '🤖' },
@@ -76,7 +77,8 @@ const rawSkills: any[] = [
         whatIs: 'The definitive design skill for developers who want to build beautiful products with professional-grade aesthetics.',
         howToUse: 'Ask to "Redesign this interface following UI/UX Pro Max standards" or "Create a design system for my app".',
         features: ['Color theory expertise', 'Typography pairing', 'Grid systems', 'Motion design principles'],
-        useCases: ['SaaS product redesigns', 'Landing page optimization', 'Building design systems from scratch']
+        useCases: ['SaaS product redesigns', 'Landing page optimization', 'Building design systems from scratch'],
+        relatedSkills: ['canvas-design', 'algorithmic-art', 'mobile-design']
     },
 
     // --- AGENTS ---
@@ -484,4 +486,33 @@ export function getCategoriesWithCount(): Category[] {
         ...cat,
         count: initialSkills.filter(s => s.category === cat.slug).length,
     }));
+}
+
+// 获取相关技能
+export function getRelatedSkills(currentSkill: Skill, limit: number = 3): Skill[] {
+    const related = initialSkills.filter(skill => {
+        if (skill.id === currentSkill.id) return false;
+        
+        // 1. 如果有 relatedSkills 字段，优先使用
+        if (currentSkill.relatedSkills && currentSkill.relatedSkills.includes(skill.slug)) {
+            return true;
+        }
+        
+        // 2. 同一分类的技能
+        if (skill.category === currentSkill.category) {
+            return true;
+        }
+        
+        // 3. 有共同标签
+        const commonTags = skill.tags.filter(tag => currentSkill.tags.includes(tag));
+        return commonTags.length >= 1;
+    });
+    
+    // 按 stars 排序，取前 limit 个
+    return related.sort((a, b) => b.stars - a.stars).slice(0, limit);
+}
+
+// 获取热门技能
+export function getPopularSkills(limit: number = 6): Skill[] {
+    return [...initialSkills].sort((a, b) => b.stars - a.stars).slice(0, limit);
 }
