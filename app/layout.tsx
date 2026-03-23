@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import StickyMemberCTA from "@/components/StickyMemberCTA";
 import { Providers } from "@/components/Providers";
 import { initialSkills } from "@/lib/data";
 
@@ -92,9 +94,12 @@ export default function RootLayout({
 
         <Providers>
           <Sidebar />
-          <main className="lg:ml-[220px] min-h-screen">
+          <main className="lg:ml-[220px] min-h-screen pb-24">
             {children}
           </main>
+          <Suspense fallback={null}>
+            <StickyMemberCTA />
+          </Suspense>
         </Providers>
       </body>
     </html>

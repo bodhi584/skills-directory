@@ -71,10 +71,10 @@ export default function SubmitPage() {
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                        Submit AI Skill
+                        Submit a Skill for Security Review
                     </h1>
                     <p className="text-gray-500 dark:text-gray-400">
-                        Share awesome AI skills with the community. Help others discover powerful tools for Claude, Cursor, and Gemini.
+                        Recommend a skill for the Antigravity review queue. Every submission is checked before publication, and only approved skills are published with member-only install and safety details.
                     </p>
                 </div>
 
@@ -212,7 +212,7 @@ export default function SubmitPage() {
                             {submitStatus === 'success' && (
                                 <div className="p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
                                     <p className="text-green-800 dark:text-green-200 text-sm mb-2">
-                                        ✅ Thank you! Your submission has been received and will be reviewed soon.
+                                        ✅ Thank you! Your submission has entered the review queue and will go through security screening before publication.
                                     </p>
                                     {issueUrl && (
                                         <a
@@ -246,7 +246,7 @@ export default function SubmitPage() {
                         {/* Guidelines */}
                         <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
                             <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                                📋 Submission Guidelines
+                                📋 Review Requirements
                             </h3>
                             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                                 <li className="flex gap-2">
@@ -255,15 +255,15 @@ export default function SubmitPage() {
                                 </li>
                                 <li className="flex gap-2">
                                     <span>✓</span>
-                                    <span>Include clear documentation</span>
+                                    <span>Must include clear documentation and setup steps</span>
                                 </li>
                                 <li className="flex gap-2">
                                     <span>✓</span>
-                                    <span>Provide working examples</span>
+                                    <span>Should be useful for AI assistants in real workflows</span>
                                 </li>
                                 <li className="flex gap-2">
                                     <span>✓</span>
-                                    <span>Be useful for AI assistants</span>
+                                    <span>Publication happens only after security review and editorial approval</span>
                                 </li>
                             </ul>
                         </div>

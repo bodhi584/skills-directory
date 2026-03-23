@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 export const metadata = {
-  title: 'Skill Reviews - Antigravity Skills',
-  description: 'Real-world reviews and testing of AI Agent Skills.',
+  title: 'Security Reviews - Antigravity Skills',
+  description: 'Real-world security reviews and testing of AI Agent Skills before publication.',
 };
 
 // Get daily review files
@@ -64,10 +64,10 @@ export default function ReviewsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <header className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">📝 Skill Reviews</h1>
+        <h1 className="text-4xl font-bold mb-4">🛡️ Security Reviews</h1>
         <p className="text-gray-600 text-lg">
-          Real-world reviews and testing of AI Agent Skills.
-          真实使用体验 • 每天更新10个Skills
+          Public security summaries, hands-on testing, and editorial reviews for AI skills before they are published.
+          登录会员后可查看完整安装方式与审核细节。
         </p>
       </header>
 
@@ -75,14 +75,14 @@ export default function ReviewsPage() {
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">📅 Daily Reviews</h2>
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
-          <h3 className="font-bold text-lg mb-2">🤖 自动评测系统已上线!</h3>
+          <h3 className="font-bold text-lg mb-2">🛡️ Security review pipeline</h3>
           <p className="text-gray-700 mb-4">
-            每天晚上10点自动测试10个新的Skills，并生成评测报告。
+            Each candidate skill goes through repository inspection, editorial review, and publication checks. Public visitors see the summary, while registered members unlock the full install guide and review details.
           </p>
           <div className="text-sm text-gray-600 grid grid-cols-3 gap-4">
-            <p>📊 已测试: {totalTested}+ Skills</p>
-            <p>📦 技能库: 1200+ Skills</p>
-            <p>⏰ 下次更新: 明天早上</p>
+            <p>📊 Reviewed: {totalTested}+ Skills</p>
+            <p>📦 Catalog monitored: 1200+ Skills</p>
+            <p>⏰ New reviews: Daily</p>
           </div>
         </div>
 

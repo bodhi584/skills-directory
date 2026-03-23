@@ -5,6 +5,7 @@ import Link from 'next/link';
 import SearchBox from '@/components/SearchBox';
 import SkillCard from '@/components/SkillCard';
 import SkillCardSkeleton from '@/components/SkillCardSkeleton';
+import RegisterCTA from '@/components/RegisterCTA';
 import { getFeaturedSkills, getLatestSkills, getCategoriesWithCount, getPopularSkills, initialSkills } from '@/lib/data';
 
 function FeaturedSkillsSection() {
@@ -99,10 +100,10 @@ export default function Home() {
         {/* Hero - SEO Optimized */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-            Find Awesome <span className="text-[#c26148]">AI Agent Skills</span>
+            Discover <span className="text-[#c26148]">Security-Reviewed AI Skills</span>
           </h1>
-          <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
-            Antigravity Skills is the #1 curated directory with <span className="text-[#c26148] font-semibold">{totalSkills}+</span> awesome skills for <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>Gemini CLI</strong> and <strong>Google Antigravity</strong> agents.
+          <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-3xl mx-auto">
+            Antigravity Skills helps you discover high-trust AI skills for <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>Gemini CLI</strong> and <strong>Google Antigravity</strong>. Browse public previews for <span className="text-[#c26148] font-semibold">{totalSkills}+</span> skills, then register to unlock full install guides, safety reviews, and compatibility notes.
           </p>
 
           <div className="max-w-xl mx-auto mb-8">
@@ -133,6 +134,14 @@ export default function Home() {
         <Suspense fallback={<SkillsLoadingSkeleton />}>
           <FeaturedSkillsSection />
         </Suspense>
+
+        <div className="mb-16">
+          <RegisterCTA
+            source="home_midpage"
+            title="Unlock full install guides for security-reviewed AI skills"
+            description="Visitors can browse public previews and review summaries. Register free to access the complete installation steps, compatibility checks, and detailed safety notes that drive conversion."
+          />
+        </div>
 
         {/* Trending Skills */}
         <Suspense fallback={<SkillsLoadingSkeleton />}>

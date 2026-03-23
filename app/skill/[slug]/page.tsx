@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { auth } from '@/auth';
 import { getSkillBySlug, initialSkills } from '@/lib/data';
 import CopyButton from '@/components/CopyButton';
 import RelatedSkills from '@/components/RelatedSkills';
+import MemberAccessGate from '@/components/MemberAccessGate';
 
 const siteUrl = 'https://www.antigravityskills.org';
 const totalSkills = `${initialSkills.length}+`;
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const seoTitle = `${skill.name} - AI Skill for Cursor, Claude & Gemini | Antigravity Skills`;
 
     // Rich description with keywords optimized for Cursor users
-    const seoDescription = `${skill.description} Master ${skill.name} with Cursor IDE, Claude Code, and Gemini CLI. Professional AI skill for developers seeking productivity boost. Free installation and usage guide.`;
+    const seoDescription = `${skill.publicPreview?.description || skill.description} Security-reviewed AI skill for Cursor IDE, Claude Code, and Gemini CLI. Register to unlock the full installation guide, compatibility notes, and safety review.`;
 
     // Enhanced SEO keywords with Cursor-specific terms and trending phrases
     const seoKeywords = [
@@ -150,6 +152,9 @@ function getTimeAgo(dateString: string): string {
 export default async function SkillPage({ params }: PageProps) {
     const { slug } = await params;
     const skill = getSkillBySlug(slug);
+    const session = await auth();
+    const isMember = Boolean(session?.user?.id);
+    const showMemberContent = !skill?.memberOnly || isMember;
 
     if (!skill) {
         notFound();
@@ -278,7 +283,20 @@ export default async function SkillPage({ params }: PageProps) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 leading-relaxed">{skill.description}</p>
+                    <p className="text-gray-600 leading-relaxed">{skill.publicPreview?.description || skill.description}</p>
+
+                    {skill.verified && (
+                        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                            <div className="p-4 rounded-xl border border-green-100 bg-green-50">
+                                <div className="text-xs font-semibold uppercase tracking-wide text-green-700 mb-1">Security Reviewed</div>
+                                <p className="text-sm text-green-900">{skill.securitySummary}</p>
+                            </div>
+                            <div className="p-4 rounded-xl border border-orange-100 bg-orange-50">
+                                <div className="text-xs font-semibold uppercase tracking-wide text-orange-700 mb-1">Member unlock</div>
+                                <p className="text-sm text-orange-900">Register to view the full install guide, detailed security report, compatibility checks, and usage insights.</p>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* Structured Content - MCP.so style */}
@@ -290,12 +308,12 @@ export default async function SkillPage({ params }: PageProps) {
                             What is {skill.name}?
                         </h2>
                         <div className="prose prose-gray max-w-none text-gray-600">
-                            {skill.whatIs || skill.description}
+                            {skill.publicPreview?.whatIs || skill.whatIs || skill.description}
                         </div>
                     </section>
 
                     {/* How to Use Section */}
-                    {skill.howToUse && (
+                    {showMemberContent && skill.howToUse && (
                         <section id="how-to-use">
                             <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                                 <span className="w-1.5 h-6 bg-[#c26148] rounded-full"></span>
@@ -315,18 +333,21 @@ export default async function SkillPage({ params }: PageProps) {
                                 Key features of {skill.name}
                             </h2>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                {skill.features.map((feature, i) => (
+                                {(showMemberContent ? skill.features : (skill.publicPreview?.features || skill.features.slice(0, 2))).map((feature, i) => (
                                     <li key={i} className="flex items-start gap-2 text-gray-600">
                                         <span className="text-green-500 mt-1">✓</span>
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
+                            {!showMemberContent && skill.features.length > 2 && (
+                                <p className="text-sm text-gray-500 mt-4 italic">+ {skill.features.length - 2} more features available to members</p>
+                            )}
                         </section>
                     )}
 
                     {/* Use Cases Section */}
-                    {skill.useCases && skill.useCases.length > 0 && (
+                    {showMemberContent && skill.useCases && skill.useCases.length > 0 && (
                         <section id="use-cases">
                             <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                                 <span className="w-1.5 h-6 bg-[#c26148] rounded-full"></span>
@@ -350,61 +371,97 @@ export default async function SkillPage({ params }: PageProps) {
                 <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
                     <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">安装方式</h2>
 
-                    {isAntigravitySkill ? (
-                        <div className="space-y-6">
-                            {/* Quick Install */}
-                            <div>
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="px-2 py-0.5 text-xs font-medium rounded bg-green-50 text-green-600 border border-green-100">推荐</span>
-                                    <span className="text-sm font-medium text-gray-700">一键安装</span>
-                                </div>
-                                <div className="relative">
-                                    <pre className="p-4 rounded-xl bg-gray-900 text-green-400 font-mono text-sm overflow-x-auto">
-                                        {installCommands?.oneLiner}
-                                    </pre>
-                                    <CopyButton text={installCommands?.oneLiner || ''} />
-                                </div>
-                            </div>
-
-                            {/* Manual Steps */}
-                            {installCommands?.manual && (
+                    {showMemberContent ? (
+                        isAntigravitySkill ? (
+                            <div className="space-y-6">
+                                {/* Quick Install */}
                                 <div>
-                                    <details className="group">
-                                        <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
-                                            <span className="group-open:rotate-90 transition-transform">▶</span>
-                                            分步安装
-                                        </summary>
-                                        <div className="mt-4 space-y-3 pl-4 border-l-2 border-gray-100">
-                                            {installCommands.manual.map((step) => (
-                                                <div key={step.step}>
-                                                    <div className="text-xs text-gray-400 mb-1">
-                                                        Step {step.step}: {step.title}
-                                                    </div>
-                                                    <div className="relative">
-                                                        <pre className="p-3 rounded-lg bg-gray-50 text-gray-700 font-mono text-xs overflow-x-auto border border-gray-100">
-                                                            {step.command}
-                                                        </pre>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </details>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <span className="px-2 py-0.5 text-xs font-medium rounded bg-green-50 text-green-600 border border-green-100">推荐</span>
+                                        <span className="text-sm font-medium text-gray-700">一键安装</span>
+                                    </div>
+                                    <div className="relative">
+                                        <pre className="p-4 rounded-xl bg-gray-900 text-green-400 font-mono text-sm overflow-x-auto">
+                                            {installCommands?.oneLiner}
+                                        </pre>
+                                        <CopyButton text={installCommands?.oneLiner || ''} />
+                                    </div>
                                 </div>
-                            )}
-                        </div>
+
+                                {/* Manual Steps */}
+                                {installCommands?.manual && (
+                                    <div>
+                                        <details className="group">
+                                            <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
+                                                <span className="group-open:rotate-90 transition-transform">▶</span>
+                                                分步安装
+                                            </summary>
+                                            <div className="mt-4 space-y-3 pl-4 border-l-2 border-gray-100">
+                                                {installCommands.manual.map((step) => (
+                                                    <div key={step.step}>
+                                                        <div className="text-xs text-gray-400 mb-1">
+                                                            Step {step.step}: {step.title}
+                                                        </div>
+                                                        <div className="relative">
+                                                            <pre className="p-3 rounded-lg bg-gray-50 text-gray-700 font-mono text-xs overflow-x-auto border border-gray-100">
+                                                                {step.command}
+                                                            </pre>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </details>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="relative">
+                                <pre className="p-4 rounded-xl bg-gray-900 text-green-400 font-mono text-sm overflow-x-auto">
+                                    {skill.install_command}
+                                </pre>
+                                <CopyButton text={skill.install_command || ''} />
+                            </div>
+                        )
                     ) : (
-                        // 外部工具的简单安装命令
-                        <div className="relative">
-                            <pre className="p-4 rounded-xl bg-gray-900 text-green-400 font-mono text-sm overflow-x-auto">
-                                {skill.install_command}
-                            </pre>
-                            <CopyButton text={skill.install_command || ''} />
-                        </div>
+                        <MemberAccessGate
+                            source={`install_gate_${skill.slug}`}
+                            title="Install Guide for Members"
+                            description="Register to unlock the full install command, step-by-step setup, configuration instructions, and verified usage notes."
+                        />
                     )}
                 </div>
 
+                {/* Security Report */}
+                {skill.verified && (
+                    <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
+                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">安全审核</h2>
+                        {showMemberContent ? (
+                            <div className="space-y-4 text-sm text-gray-700">
+                                <div className="flex flex-wrap gap-3">
+                                    {skill.securityScore && (
+                                        <span className="px-3 py-1.5 rounded-lg bg-green-50 text-green-700 border border-green-100">Security score: {skill.securityScore}/100</span>
+                                    )}
+                                    {skill.reviewedAt && (
+                                        <span className="px-3 py-1.5 rounded-lg bg-gray-50 text-gray-700 border border-gray-100">Reviewed: {skill.reviewedAt}</span>
+                                    )}
+                                    {skill.reviewedBy && (
+                                        <span className="px-3 py-1.5 rounded-lg bg-gray-50 text-gray-700 border border-gray-100">By: {skill.reviewedBy}</span>
+                                    )}
+                                </div>
+                                {skill.securityReport && <p>{skill.securityReport}</p>}
+                            </div>
+                        ) : (
+                            <MemberAccessGate
+                                source={`security_gate_${skill.slug}`}
+                                title="Security Review Report"
+                                description="Sign in to view the full audit notes, review date, reviewer, compatibility validation, and operational guidance."
+                            />
+                        )}
+                    </div>
+                )}
+
                 {/* Dependencies */}
-                {skill.dependencies && Object.keys(skill.dependencies).length > 0 && (
+                {(showMemberContent && skill.dependencies && Object.keys(skill.dependencies).length > 0) && (
                     <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
                         <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">依赖要求</h2>
                         <div className="flex flex-wrap gap-3">
@@ -414,6 +471,48 @@ export default async function SkillPage({ params }: PageProps) {
                                 </span>
                             ))}
                         </div>
+                    </div>
+                )}
+
+                {/* Compatibility & member insights */}
+                {(skill.compatibility || skill.usageStats) && (
+                    <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
+                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">兼容性与使用反馈</h2>
+                        {showMemberContent ? (
+                            <div className="grid gap-6 sm:grid-cols-2">
+                                {skill.compatibility && (
+                                    <div>
+                                        <h3 className="font-semibold text-gray-900 mb-3">Compatibility</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {skill.compatibility.map((item) => (
+                                                <span key={item} className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-600 text-sm border border-blue-100">
+                                                    {item}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                                {skill.usageStats && (
+                                    <div>
+                                        <h3 className="font-semibold text-gray-900 mb-3">Member insights</h3>
+                                        <ul className="space-y-2 text-sm text-gray-700">
+                                            {skill.usageStats.map((item) => (
+                                                <li key={item} className="flex gap-2">
+                                                    <span className="text-[#c26148]">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <MemberAccessGate
+                                source={`compatibility_gate_${skill.slug}`}
+                                title="Compatibility & Usage Insights"
+                                description="Register to see tested platforms, dependency notes, setup caveats, and member usage feedback before installing."
+                            />
+                        )}
                     </div>
                 )}
 

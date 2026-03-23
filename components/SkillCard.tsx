@@ -43,8 +43,21 @@ export default function SkillCard({ skill }: SkillCardProps) {
 
             {/* Description */}
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 leading-relaxed flex-1">
-                {skill.description}
+                {skill.publicPreview?.description || skill.description}
             </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+                {skill.verified && (
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-green-50 text-green-700 border border-green-100">
+                        Security Reviewed
+                    </span>
+                )}
+                {skill.memberOnly && (
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-orange-50 text-orange-700 border border-orange-100">
+                        Members Unlock Full Guide
+                    </span>
+                )}
+            </div>
 
             {/* Footer */}
             <div className="flex items-center justify-between pt-3 border-t border-gray-50 dark:border-gray-800 mt-auto">

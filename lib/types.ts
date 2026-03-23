@@ -22,6 +22,21 @@ export interface Skill {
   useCases?: string[];
   relatedSkills?: string[];
   source?: string;
+  verified?: boolean;
+  reviewStatus?: 'pending' | 'reviewed' | 'rejected';
+  memberOnly?: boolean;
+  securityScore?: number;
+  securitySummary?: string;
+  securityReport?: string;
+  reviewedAt?: string;
+  reviewedBy?: string;
+  compatibility?: string[];
+  usageStats?: string[];
+  publicPreview?: {
+    description?: string;
+    whatIs?: string;
+    features?: string[];
+  };
 }
 
 export interface Category {

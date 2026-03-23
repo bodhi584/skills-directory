@@ -27,11 +27,13 @@ export async function POST(request: NextRequest) {
 
         // Create issue body
         const issueBody = `
-## Skill Submission
+## Skill Review Submission
 
 **Name:** ${data.name}
 **Type:** ${data.type || 'skill'}
 **Category:** ${data.category || 'other'}
+**Review Status:** pending
+**Publication Status:** awaiting security review
 
 ### GitHub URL
 ${data.githubUrl}
@@ -46,7 +48,7 @@ ${data.tags || 'N/A'}
 ${data.author || 'Anonymous'}
 
 ---
-*This submission was created via the Antigravity Skills directory.*
+*This submission was created via the Antigravity Skills review queue and requires security review before publication.*
         `.trim();
 
         // Create GitHub Issue

@@ -3,12 +3,21 @@ import Link from 'next/link'
 import { redirect } from "next/navigation"
 import { auth } from "@/auth"
 
-export default async function SignInPage() {
-    const session = await auth()
+interface SignInPageProps {
+    searchParams?: Promise<{ source?: string; redirect?: string }>
+}
 
-    // If already signed in, redirect to home
+export default async function SignInPage({ searchParams }: SignInPageProps) {
+    const session = await auth()
+    const resolvedSearchParams = await searchParams
+    const source = resolvedSearchParams?.source || 'direct'
+    const requestedRedirect = resolvedSearchParams?.redirect
+    const redirectTarget = requestedRedirect && requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//')
+        ? requestedRedirect
+        : '/'
+
     if (session) {
-        redirect("/")
+        redirect(redirectTarget)
     }
 
     return (
@@ -23,8 +32,11 @@ export default async function SignInPage() {
                         />
                         <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Antigravity Skills</span>
                     </Link>
-                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Welcome back</h1>
-                    <p className="text-gray-500 dark:text-gray-400">Sign in to save your favorite skills and get personalized recommendations.</p>
+                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Unlock full skill access</h1>
+                    <p className="text-gray-500 dark:text-gray-400">Sign in to view full install guides, security review details, compatibility notes, and member-only insights for verified skills.</p>
+                    <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-[#c26148]/10 text-[#c26148] text-xs font-medium">
+                        Source: {source}
+                    </div>
                 </div>
 
                 <div className="space-y-4">
@@ -32,7 +44,7 @@ export default async function SignInPage() {
                     <form
                         action={async () => {
                             "use server"
-                            await signIn("google", { redirectTo: "/" })
+                            await signIn("google", { redirectTo: redirectTarget })
                         }}
                     >
                         <button
@@ -53,7 +65,7 @@ export default async function SignInPage() {
                     <form
                         action={async () => {
                             "use server"
-                            await signIn("github", { redirectTo: "/" })
+                            await signIn("github", { redirectTo: redirectTarget })
                         }}
                     >
                         <button
