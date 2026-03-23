@@ -4,15 +4,19 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { Providers } from "@/components/Providers";
+import { initialSkills } from "@/lib/data";
 
 const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+const siteUrl = "https://www.antigravityskills.org";
+const totalSkills = `${initialSkills.length}+`;
+
 export const metadata: Metadata = {
   title: "Antigravity Skills - Find Awesome AI Agent Skills for Claude, Cursor & Gemini",
-  description: "The largest collection of AI Skills for Google Antigravity, Claude Code, Cursor, Gemini CLI and other AI agents. 244+ curated awesome skills for agent development, MCP servers, and AI automation.",
+  description: `The largest collection of AI Skills for Google Antigravity, Claude Code, Cursor, Gemini CLI and other AI agents. ${totalSkills} curated awesome skills for agent development, MCP servers, and AI automation.`,
   keywords: [
     // Top trending keywords from search data
     "antigravity skills",
@@ -40,8 +44,8 @@ export const metadata: Metadata = {
   publisher: "Antigravity Skills",
   openGraph: {
     title: "Antigravity Skills - Awesome AI Agent Skills Directory",
-    description: "244+ curated AI Skills for Claude Code, Cursor, Gemini CLI and Google Antigravity agents.",
-    url: "https://antigravityskills.org",
+    description: `${totalSkills} curated AI Skills for Claude Code, Cursor, Gemini CLI and Google Antigravity agents.`,
+    url: siteUrl,
     siteName: "Antigravity Skills",
     type: "website",
     locale: "en_US",
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Antigravity Skills - AI Agent Skills Directory",
-    description: "244+ curated AI Skills for Claude, Cursor, Gemini and Antigravity agents.",
+    description: `${totalSkills} curated AI Skills for Claude, Cursor, Gemini and Antigravity agents.`,
   },
   robots: {
     index: true,
@@ -60,7 +64,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://antigravityskills.org",
+    canonical: siteUrl,
   },
 };
 
