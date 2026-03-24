@@ -492,8 +492,22 @@ export function getSkills(params: SearchParams = {}): SkillsResponse {
     };
 }
 
+// Slug aliases: map old/short slugs to canonical slugs
+const slugAliases: Record<string, string> = {
+    'agent-manager': 'agent-manager-skill',
+};
+
 export function getSkillBySlug(slug: string): Skill | undefined {
-    return initialSkills.find(s => s.slug === slug);
+    // Check if this is an alias and resolve to canonical slug
+    const canonicalSlug = slugAliases[slug] || slug;
+    return initialSkills.find(s => s.slug === canonicalSlug);
+}
+
+// Get all slugs including aliases for static generation
+export function getAllSkillSlugs(): string[] {
+    const canonicalSlugs = initialSkills.map(s => s.slug);
+    const aliasSlugs = Object.keys(slugAliases);
+    return [...canonicalSlugs, ...aliasSlugs];
 }
 
 export function getFeaturedSkills(): Skill[] {

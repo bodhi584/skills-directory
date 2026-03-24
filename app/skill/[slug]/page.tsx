@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { auth } from '@/auth';
-import { getSkillBySlug, initialSkills } from '@/lib/data';
+import { getSkillBySlug, getAllSkillSlugs, initialSkills } from '@/lib/data';
 import CopyButton from '@/components/CopyButton';
 import RelatedSkills from '@/components/RelatedSkills';
 import MemberAccessGate from '@/components/MemberAccessGate';
@@ -15,8 +15,8 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    return initialSkills.map((skill) => ({
-        slug: skill.slug,
+    return getAllSkillSlugs().map((slug) => ({
+        slug,
     }));
 }
 
