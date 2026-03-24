@@ -7,6 +7,14 @@ export const metadata = {
 
 const blogPosts = [
   {
+    slug: 'best-ai-memory-skills-for-claude-code',
+    title: 'Best AI Memory Skills for Claude Code, Cursor, and Gemini',
+    excerpt: 'Discover five memory-focused AI skills that improve context retention, cross-task recall, and long-running agent workflows.',
+    date: '2026-03-24',
+    tags: ['Memory', 'Claude Code', 'SEO'],
+    readTime: '6 min',
+  },
+  {
     slug: 'what-are-ai-agent-skills',
     title: 'What Are AI Agent Skills? A Complete Guide for 2025',
     excerpt: 'The rise of AI agents demands a new paradigm for capability management. Learn what skills are and why they matter.',

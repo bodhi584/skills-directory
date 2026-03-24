@@ -33,24 +33,24 @@ function getDailyReviews() {
 const allReviews = [
   {
     slug: 'skill-reviews',
-    title: 'OpenClaw Skills 体验评测',
-    excerpt: '真实使用体验 • 持续更新',
+    title: 'OpenClaw Skills Hands-On Reviews',
+    excerpt: 'Real usage notes and ongoing updates',
     date: '2026-02-02',
     tags: ['Reviews', 'OpenClaw', 'Testing'],
     readTime: '10 min',
   },
   {
     slug: 'review-framework',
-    title: 'Review 框架规范',
-    excerpt: 'Review格式规范 • 持续产出高质量内容',
+    title: 'Review Framework Guide',
+    excerpt: 'Review format standards for repeatable high-quality content',
     date: '2026-02-02',
     tags: ['Guide', 'Framework', 'Reviews'],
     readTime: '5 min',
   },
   {
     slug: 'review-todo',
-    title: 'Review 待办清单',
-    excerpt: '追踪进度和计划',
+    title: 'Review Task List',
+    excerpt: 'Track progress and upcoming review plans',
     date: '2026-02-02',
     tags: ['Todo', 'Planning', 'Reviews'],
     readTime: '3 min',
@@ -67,7 +67,7 @@ export default function ReviewsPage() {
         <h1 className="text-4xl font-bold mb-4">🛡️ Security Reviews</h1>
         <p className="text-gray-600 text-lg">
           Public security summaries, hands-on testing, and editorial reviews for AI skills before they are published.
-          登录会员后可查看完整安装方式与审核细节。
+          Register to unlock the full installation guide and deeper review details.
         </p>
       </header>
 

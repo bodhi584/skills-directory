@@ -103,22 +103,22 @@ function getInstallCommands(skill: ReturnType<typeof getSkillBySlug>) {
             manual: [
                 {
                     step: 1,
-                    title: '创建 Skills 目录',
+                    title: 'Create skills directory',
                     command: 'mkdir -p ~/.agent/skills',
                 },
                 {
                     step: 2,
-                    title: '克隆 Skills 仓库',
+                    title: 'Clone the skills repository',
                     command: 'git clone --depth 1 https://github.com/sickn33/antigravity-awesome-skills.git /tmp/ag-skills',
                 },
                 {
                     step: 3,
-                    title: '复制此 Skill',
+                    title: 'Copy this skill',
                     command: `cp -r /tmp/ag-skills/skills/${skillPath} ~/.agent/skills/`,
                 },
                 {
                     step: 4,
-                    title: '清理临时文件',
+                    title: 'Clean up temporary files',
                     command: 'rm -rf /tmp/ag-skills',
                 },
             ],
@@ -369,7 +369,7 @@ export default async function SkillPage({ params }: PageProps) {
 
                 {/* Installation - Enhanced */}
                 <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
-                    <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">安装方式</h2>
+                    <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Installation</h2>
 
                     {showMemberContent ? (
                         isAntigravitySkill ? (
@@ -377,8 +377,8 @@ export default async function SkillPage({ params }: PageProps) {
                                 {/* Quick Install */}
                                 <div>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="px-2 py-0.5 text-xs font-medium rounded bg-green-50 text-green-600 border border-green-100">推荐</span>
-                                        <span className="text-sm font-medium text-gray-700">一键安装</span>
+                                        <span className="px-2 py-0.5 text-xs font-medium rounded bg-green-50 text-green-600 border border-green-100">Recommended</span>
+                                        <span className="text-sm font-medium text-gray-700">One-line install</span>
                                     </div>
                                     <div className="relative">
                                         <pre className="p-4 rounded-xl bg-gray-900 text-green-400 font-mono text-sm overflow-x-auto">
@@ -394,7 +394,7 @@ export default async function SkillPage({ params }: PageProps) {
                                         <details className="group">
                                             <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
                                                 <span className="group-open:rotate-90 transition-transform">▶</span>
-                                                分步安装
+                                                Step-by-step install
                                             </summary>
                                             <div className="mt-4 space-y-3 pl-4 border-l-2 border-gray-100">
                                                 {installCommands.manual.map((step) => (
@@ -434,7 +434,7 @@ export default async function SkillPage({ params }: PageProps) {
                 {/* Security Report */}
                 {skill.verified && (
                     <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
-                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">安全审核</h2>
+                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Security Review</h2>
                         {showMemberContent ? (
                             <div className="space-y-4 text-sm text-gray-700">
                                 <div className="flex flex-wrap gap-3">
@@ -463,7 +463,7 @@ export default async function SkillPage({ params }: PageProps) {
                 {/* Dependencies */}
                 {(showMemberContent && skill.dependencies && Object.keys(skill.dependencies).length > 0) && (
                     <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
-                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">依赖要求</h2>
+                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Dependencies</h2>
                         <div className="flex flex-wrap gap-3">
                             {Object.entries(skill.dependencies).map(([name, version]) => (
                                 <span key={name} className="px-3 py-1.5 rounded-lg bg-orange-50 text-orange-600 text-sm border border-orange-100">
@@ -477,7 +477,7 @@ export default async function SkillPage({ params }: PageProps) {
                 {/* Compatibility & member insights */}
                 {(skill.compatibility || skill.usageStats) && (
                     <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
-                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">兼容性与使用反馈</h2>
+                        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Compatibility & Member Insights</h2>
                         {showMemberContent ? (
                             <div className="grid gap-6 sm:grid-cols-2">
                                 {skill.compatibility && (
@@ -518,7 +518,7 @@ export default async function SkillPage({ params }: PageProps) {
 
                 {/* Tags */}
                 <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
-                    <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">标签</h2>
+                    <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Tags</h2>
                     <div className="flex flex-wrap gap-2">
                         {skill.tags.map(tag => (
                             <Link
@@ -534,7 +534,7 @@ export default async function SkillPage({ params }: PageProps) {
 
                 {/* Platforms */}
                 <div className="mb-8 p-6 rounded-2xl bg-white border border-gray-100">
-                    <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">支持平台</h2>
+                    <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Supported Platforms</h2>
                     <div className="flex flex-wrap gap-2">
                         {skill.platforms.map(platform => (
                             <span

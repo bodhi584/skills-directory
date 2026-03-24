@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export async function generateStaticParams() {
   return [
+    { slug: 'best-ai-memory-skills-for-claude-code' },
     { slug: 'what-are-ai-agent-skills' },
     { slug: '5-skills-10x-productivity' },
     { slug: 'create-your-first-skill' },
@@ -14,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const slug = (await params).slug;
   
   const titles: Record<string, string> = {
+    'best-ai-memory-skills-for-claude-code': 'Best AI Memory Skills for Claude Code, Cursor, and Gemini',
     'what-are-ai-agent-skills': 'What Are AI Agent Skills? A Complete Guide for 2025',
     '5-skills-10x-productivity': '5 AI Agent Skills That Will 10x Your Productivity',
     'create-your-first-skill': 'How to Create Your First AI Agent Skill',
@@ -37,6 +39,90 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   };
   
   const posts: Record<string, Post> = {
+    'best-ai-memory-skills-for-claude-code': {
+      title: 'Best AI Memory Skills for Claude Code, Cursor, and Gemini',
+      date: '2026-03-24',
+      readTime: '6 min',
+      tags: ['Memory', 'Claude Code', 'Cursor'],
+      content: `## Why AI Memory Skills Matter
+
+The biggest bottleneck in AI-assisted development is not model quality anymore. It is memory.
+
+A strong coding agent can reason well in the current prompt, but without durable memory it forgets prior decisions, repeated fixes, installation caveats, and team preferences. That means more repetition, more context rebuilding, and weaker long-running workflows.
+
+If you use Claude Code, Cursor, Gemini CLI, or Antigravity, memory-oriented skills can dramatically improve continuity.
+
+## What Good Agent Memory Looks Like
+
+The best AI memory systems do more than store notes. They help agents:
+
+- retain context across tasks
+- recall prior implementation decisions
+- surface reusable workflows
+- preserve security and install knowledge
+- improve over time instead of restarting from zero
+
+That is why memory skills are now a major search category for developers looking for better AI coding workflows.
+
+## 5 Memory Skills Worth Bookmarking
+
+### 1. Everything Claude Code
+
+A broad performance and memory optimization system for Claude Code and adjacent agent environments. It combines memory, instincts, security, and research-first workflows in one package.
+
+**Best for:** developers who want a full operating system for better agent behavior.
+
+### 2. OpenViking
+
+An open-source context database for AI agents. It unifies memory, resources, and skills through a file-system-like structure, making it useful for persistent and hierarchical context delivery.
+
+**Best for:** teams building long-running or multi-step agent systems.
+
+### 3. MemOS
+
+An AI memory operating system designed for cross-task skill reuse and evolution. MemOS focuses on turning short-lived task context into reusable memory over time.
+
+**Best for:** agents that need to retain and improve repeatable skills.
+
+### 4. Cipher Memory
+
+A memory layer built specifically for coding agents. It is especially relevant for Claude Code and Cursor style workflows, where session continuity and technical recall matter.
+
+**Best for:** developers who want persistent coding context across sessions.
+
+### 5. memU
+
+A memory layer for always-on proactive agents. It is designed around 24/7 agent workflows and long-lived automation loops.
+
+**Best for:** proactive agents that run continuously and need durable recall.
+
+## How to Choose the Right Memory Skill
+
+Choose based on your workflow:
+
+- **Single developer, coding-focused:** Cipher Memory or Everything Claude Code
+- **Long-running multi-agent systems:** OpenViking
+- **Skill reuse and long-term learning:** MemOS
+- **Always-on automation:** memU
+
+## Why This Matters for SEO and Discovery
+
+Search demand is shifting from generic phrases like “AI tools” to specific intent such as:
+
+- Claude Code memory
+- Cursor memory layer
+- AI agent persistent memory
+- coding agent memory
+- cross-session context for AI agents
+
+That makes memory-focused skills an important discovery surface for developers who are already trying to solve context retention problems.
+
+## Explore Memory Skills on Antigravity Skills
+
+Antigravity Skills now includes memory-oriented entries that help developers compare options, review public summaries, and register to unlock deeper install guidance and compatibility notes.
+
+If you are evaluating AI memory for Claude Code, Cursor, or Gemini, start with the memory skills directory and compare the tradeoffs between full-stack systems, context databases, and coding-specific memory layers.`,
+    },
     'what-are-ai-agent-skills': {
       title: 'What Are AI Agent Skills? A Complete Guide for 2025',
       date: '2026-02-01',
