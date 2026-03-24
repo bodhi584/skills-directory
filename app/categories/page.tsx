@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getCategoriesWithCount } from '@/lib/data';
 
 export const metadata = {
-    title: 'Categories - Antigravity Skills',
-    description: 'Browse AI skills by category: Agents, Coding, Security, Productivity, and more.',
+    title: 'Browse Security-Reviewed AI Skills by Category - Antigravity Skills',
+    description: 'Browse security-reviewed AI skills by category. Find Claude, Cursor, and Gemini skills for agents, coding, security, productivity, and more. Register to unlock full install guides.',
 };
 
 export default function CategoriesPage() {
@@ -18,8 +18,15 @@ export default function CategoriesPage() {
             </div>
 
             <div className="max-w-5xl mx-auto px-8 py-12">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Categories</h1>
-                <p className="text-gray-500 dark:text-gray-400 mb-10">Browse skills by category</p>
+                <div className="text-center mb-10">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#c26148]/10 text-[#c26148] text-xs font-semibold uppercase tracking-wide mb-4">
+                        Security-reviewed discovery
+                    </div>
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Browse Skills by Category</h1>
+                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+                        Every category features security-reviewed skills. Browse public previews, then register free to access full install guides, compatibility notes, and review reports.
+                    </p>
+                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {categories.map(category => (

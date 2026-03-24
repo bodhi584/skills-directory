@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { initialSkills } from '@/lib/data';
 
 export const metadata = {
-    title: 'Tags - Antigravity Skills',
-    description: 'Browse AI skills by tags: agent, security, automation, testing, and more.',
+    title: 'Tags - Security-Reviewed AI Skills Directory',
+    description: 'Browse security-reviewed AI skills by tags: agent, security, automation, testing, coding, and more. Public previews available; register to unlock install guides.',
 };
 
 export default function TagsPage() {
@@ -28,8 +28,18 @@ export default function TagsPage() {
             </div>
 
             <div className="max-w-5xl mx-auto px-8 py-12">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Tags</h1>
-                <p className="text-gray-500 dark:text-gray-400 mb-10">Explore skills by tags ({sortedTags.length} tags)</p>
+                <div className="text-center mb-10">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#c26148]/10 text-[#c26148] text-xs font-semibold uppercase tracking-wide mb-4">
+                        Browse by tag
+                    </div>
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">Security-Reviewed Skill Tags</h1>
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Discover vetted AI skills by topic or technology. Tags help you find public previews in specific areas. Register to unlock complete setup instructions and safety notes.
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 mt-3 text-sm">
+                        {sortedTags.length} tags
+                    </p>
+                </div>
 
                 <div className="flex flex-wrap gap-3">
                     {sortedTags.map(([tag, count]) => (

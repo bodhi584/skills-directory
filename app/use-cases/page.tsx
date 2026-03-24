@@ -1,15 +1,18 @@
 export const metadata = {
-  title: 'Use Cases - Antigravity Skills',
-  description: 'Real-world use cases and success stories showcasing AI Agent Skills in action.',
+  title: 'Use Cases - Security-Reviewed AI Skills',
+  description: 'Real-world examples of security-reviewed AI skills in action: multi-agent workflows, code review automation, penetration testing, RAG pipelines, DevOps, and UI design.',
 };
 
 export default function UseCasesPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <header className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">🎯 Use Cases Gallery</h1>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Real-world examples showing how AI Agent Skills transform workflows and boost productivity.
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#c26148]/10 text-[#c26148] text-xs font-semibold uppercase tracking-wide mb-4">
+          Real-world outcomes
+        </div>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Use Cases for Security-Reviewed Skills</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+          See how teams apply vetted AI skills across development, security, DevOps, and design. Each scenario highlights public results, with member-only setup details available after registration.
         </p>
       </header>
 
@@ -321,14 +324,14 @@ export default function UseCasesPage() {
       </section>
 
       <footer className="mt-16 text-center">
-        <a 
-          href="/submit" 
+        <a
+          href="/auth/signin?source=use_cases_cta"
           className="inline-block px-8 py-4 bg-[#c26148] text-white font-bold rounded-lg hover:bg-[#b0553e] transition"
         >
-          📝 Submit Your Use Case
+          Register to Unlock Setup Guides
         </a>
-        <p className="mt-4 text-gray-500">
-          Share your success story with the community
+        <p className="mt-4 text-gray-500 dark:text-gray-400">
+          Get access to full installation steps and safety review details
         </p>
       </footer>
     </div>
