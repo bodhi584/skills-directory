@@ -5,8 +5,8 @@ import { getSkills, categories } from '@/lib/data';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Explore AI Skills - Antigravity Skills',
-    description: 'Browse and search all AI Skills. Find the perfect skill to enhance your Claude, Cursor, or Antigravity assistant.',
+    title: 'Explore Security-Reviewed AI Skills - Antigravity Skills',
+    description: 'Browse and search security-reviewed AI skills with public previews for SEO and member-only install guides, compatibility notes, and safety reviews.',
 };
 
 interface PageProps {
@@ -26,10 +26,16 @@ export default async function ExplorePage({ searchParams }: PageProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                        Explore AI Skills
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#c26148]/10 text-[#c26148] text-xs font-semibold uppercase tracking-wide mb-4">
+                        Security-reviewed discovery
+                    </div>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Explore Security-Reviewed AI Skills
                     </h1>
-                    <p className="text-gray-400 mb-8">
+                    <p className="text-gray-600 dark:text-gray-400 mb-3 max-w-3xl mx-auto">
+                        Browse public previews for vetted AI skills across Claude Code, Cursor, Gemini CLI, and Antigravity. Register to unlock full install guides, compatibility details, and review notes.
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 mb-8">
                         {total} skills available
                     </p>
                     <SearchBox defaultValue={params.q} size="lg" />

@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     return {
-        title: `${category.name} AI Skills - Antigravity Skills`,
-        description: `Browse ${category.name} skills. ${category.description}`,
+        title: `${category.name} Security-Reviewed AI Skills - Antigravity Skills`,
+        description: `Browse ${category.name} security-reviewed AI skills with public previews and member-only install guides. ${category.description}`,
     };
 }
 
@@ -44,11 +44,14 @@ export default async function CategoryPage({ params }: PageProps) {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <span className="text-6xl mb-4 block">{category.icon}</span>
-                    <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                        {category.name} Skills
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#c26148]/10 text-[#c26148] text-xs font-semibold uppercase tracking-wide mb-4">
+                        Security-reviewed category
+                    </div>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                        {category.name} Security-Reviewed Skills
                     </h1>
-                    <p className="text-gray-400">
-                        {category.description} • {total} skills
+                    <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                        {category.description}. Browse public previews first, then register to unlock full install instructions, compatibility checks, and review details. • {total} skills
                     </p>
                 </div>
 
