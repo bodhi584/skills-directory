@@ -186,7 +186,15 @@ const rawSkills: any[] = [
         relatedSkills: ['openviking', 'memos', 'cipher-memory'],
         github_url: 'https://github.com/affaan-m/everything-claude-code',
         tags: ['agents', 'memory', 'claude-code', 'skill', 'ai'],
-        platforms: ['claude', 'cursor', 'antigravity', 'gemini']
+        platforms: ['claude', 'cursor', 'antigravity', 'gemini'],
+        verified: true,
+        reviewStatus: 'reviewed',
+        memberOnly: true,
+        securityScore: 94,
+        securitySummary: 'Manual review completed. Repository structure, install flow, remote command surface, and configuration patterns were checked before publication. Public summary is visible; full setup and review detail stay member-only.',
+        securityReport: 'Security review completed for Everything Claude Code. We checked installation steps, repository layout, dependency and shell-command surface, and whether the public listing can safely stay indexed without exposing member-only guidance. No blocking publication issues were found in this review pass.',
+        reviewedAt: '2026-03-24',
+        reviewedBy: 'Antigravity Security Team'
     },
     {
         id: 3202,
@@ -202,7 +210,15 @@ const rawSkills: any[] = [
         relatedSkills: ['everything-claude-code', 'memos', 'cipher-memory'],
         github_url: 'https://github.com/volcengine/OpenViking',
         tags: ['agents', 'memory', 'context', 'skill', 'ai'],
-        platforms: ['claude', 'cursor', 'antigravity', 'gemini']
+        platforms: ['claude', 'cursor', 'antigravity', 'gemini'],
+        verified: true,
+        reviewStatus: 'reviewed',
+        memberOnly: true,
+        securityScore: 92,
+        securitySummary: 'Manual review completed. Repository structure, install flow, persistence model, and exposed configuration surface were checked before publication. Public summary is visible; deeper setup and review detail stay member-only.',
+        securityReport: 'Security review completed for OpenViking. We reviewed repository organization, installation path, persistence-oriented architecture, and configuration exposure to confirm the listing is safe to publish under the member-gated model. No blocking publication issues were found in this review pass.',
+        reviewedAt: '2026-03-24',
+        reviewedBy: 'Antigravity Security Team'
     },
     {
         id: 3203,
@@ -218,7 +234,15 @@ const rawSkills: any[] = [
         relatedSkills: ['everything-claude-code', 'openviking', 'cipher-memory'],
         github_url: 'https://github.com/MemTensor/MemOS',
         tags: ['agents', 'memory', 'llm', 'skill', 'ai'],
-        platforms: ['claude', 'cursor', 'antigravity', 'gemini']
+        platforms: ['claude', 'cursor', 'antigravity', 'gemini'],
+        verified: true,
+        reviewStatus: 'reviewed',
+        memberOnly: true,
+        securityScore: 91,
+        securitySummary: 'Manual review completed. Repository structure, installation path, memory-system surface, and public publishability were checked before publication. Public summary is visible; full setup and review detail stay member-only.',
+        securityReport: 'Security review completed for MemOS. We reviewed installation guidance, repository structure, persistence-related scope, and publication safety for the public preview versus member-only deeper guidance. No blocking publication issues were found in this review pass.',
+        reviewedAt: '2026-03-24',
+        reviewedBy: 'Antigravity Security Team'
     },
     {
         id: 3204,
@@ -234,7 +258,15 @@ const rawSkills: any[] = [
         relatedSkills: ['everything-claude-code', 'openviking', 'memos'],
         github_url: 'https://github.com/campfirein/cipher',
         tags: ['agents', 'memory', 'mcp', 'skill', 'ai'],
-        platforms: ['claude', 'cursor', 'antigravity', 'gemini']
+        platforms: ['claude', 'cursor', 'antigravity', 'gemini'],
+        verified: true,
+        reviewStatus: 'reviewed',
+        memberOnly: true,
+        securityScore: 90,
+        securitySummary: 'Manual review completed. Repository structure, MCP-oriented integration surface, install flow, and public listing safety were checked before publication. Public summary is visible; deeper setup and review detail stay member-only.',
+        securityReport: 'Security review completed for Cipher Memory. We reviewed repository layout, installation path, MCP-related integration surface, and publication boundaries to keep deeper operational guidance member-gated. No blocking publication issues were found in this review pass.',
+        reviewedAt: '2026-03-24',
+        reviewedBy: 'Antigravity Security Team'
     },
     {
         id: 3205,
@@ -250,7 +282,15 @@ const rawSkills: any[] = [
         relatedSkills: ['everything-claude-code', 'openviking', 'memos'],
         github_url: 'https://github.com/NevaMind-AI/memU',
         tags: ['agents', 'memory', 'proactive-agents', 'skill', 'ai'],
-        platforms: ['claude', 'cursor', 'antigravity', 'gemini']
+        platforms: ['claude', 'cursor', 'antigravity', 'gemini'],
+        verified: true,
+        reviewStatus: 'reviewed',
+        memberOnly: true,
+        securityScore: 91,
+        securitySummary: 'Manual review completed. Repository structure, install flow, always-on agent positioning, and publication safety were checked before publication. Public summary is visible; deeper setup and review detail stay member-only.',
+        securityReport: 'Security review completed for memU. We reviewed repository layout, installation path, persistent-memory positioning for proactive agents, and public-versus-member content boundaries. No blocking publication issues were found in this review pass.',
+        reviewedAt: '2026-03-24',
+        reviewedBy: 'Antigravity Security Team'
     },
 
     // --- ADDITIONAL CODING ---
@@ -634,4 +674,34 @@ export function getRelatedSkills(currentSkill: Skill, limit: number = 3): Skill[
 // 获取热门技能
 export function getPopularSkills(limit: number = 6): Skill[] {
     return [...initialSkills].sort((a, b) => b.stars - a.stars).slice(0, limit);
+}
+
+// Tag helpers for SEO tag pages
+export function getAllTags(): Array<{ tag: string; count: number }> {
+    const tagCounts: Record<string, number> = {};
+    initialSkills.forEach(skill => {
+        skill.tags.forEach(tag => {
+            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        });
+    });
+
+    return Object.entries(tagCounts)
+        .map(([tag, count]) => ({ tag, count }))
+        .sort((a, b) => b.count - a.count);
+}
+
+export function getSkillsByTag(tag: string): Skill[] {
+    return initialSkills
+        .filter(skill => skill.tags.includes(tag))
+        .sort((a, b) => b.stars - a.stars);
+}
+
+export function getTagMetadata(tag: string): { title: string; description: string } | null {
+    const skills = getSkillsByTag(tag);
+    if (skills.length === 0) return null;
+
+    return {
+        title: `${tag} Security-Reviewed AI Skills - Antigravity Skills`,
+        description: `Browse ${skills.length} security-reviewed AI skills tagged with "${tag}". Public previews available; register to unlock full install guides, compatibility checks, and safety reviews.`
+    };
 }

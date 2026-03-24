@@ -48,6 +48,17 @@ export default function BlogPage() {
         <p className="text-gray-600 text-lg">
           Articles, tutorials, and guides about AI Agent Skills.
         </p>
+        <div className="flex flex-wrap gap-3 mt-6">
+          <Link href="/tags" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+            Browse tags
+          </Link>
+          <Link href="/categories" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+            Browse categories
+          </Link>
+          <Link href="/use-cases" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+            Explore use cases
+          </Link>
+        </div>
       </header>
 
       <div className="space-y-8">

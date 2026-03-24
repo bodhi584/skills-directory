@@ -37,6 +37,8 @@ export default async function CategoryPage({ params }: PageProps) {
     }
 
     const { skills, total } = getSkills({ category: slug });
+    const relatedTags = Array.from(new Set(skills.flatMap((skill) => skill.tags))).slice(0, 8);
+    const commonPlatforms = Array.from(new Set(skills.flatMap((skill) => skill.platforms))).slice(0, 6);
 
     return (
         <div className="min-h-screen py-12">
@@ -65,6 +67,46 @@ export default async function CategoryPage({ params }: PageProps) {
                         <li className="text-white">{category.name}</li>
                     </ol>
                 </nav>
+
+                {(relatedTags.length > 0 || commonPlatforms.length > 0) && (
+                    <section className="mb-8 grid gap-6 lg:grid-cols-2">
+                        {relatedTags.length > 0 && (
+                            <div className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+                                <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Related Tags</h2>
+                                <div className="flex flex-wrap gap-2">
+                                    {relatedTags.map((tag) => (
+                                        <Link
+                                            key={tag}
+                                            href={`/tag/${tag}`}
+                                            className="px-3 py-1.5 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-sm border border-gray-100 dark:border-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5 transition-colors"
+                                        >
+                                            #{tag}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {commonPlatforms.length > 0 && (
+                            <div className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+                                <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">Common Platforms</h2>
+                                <div className="flex flex-wrap gap-2">
+                                    {commonPlatforms.map((platform) => (
+                                        <span
+                                            key={platform}
+                                            className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-600 text-sm border border-blue-100 capitalize"
+                                        >
+                                            {platform}
+                                        </span>
+                                    ))}
+                                </div>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                                    Public previews help you compare fit before unlocking member-only setup, compatibility, and review notes.
+                                </p>
+                            </div>
+                        )}
+                    </section>
+                )}
 
                 {/* Skills Grid */}
                 {skills.length > 0 ? (

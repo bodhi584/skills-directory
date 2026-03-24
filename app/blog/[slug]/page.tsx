@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export async function generateStaticParams() {
   return [
@@ -370,6 +371,25 @@ The best skills come from solving your own problems.`,
   };
 
   const post = posts[slug];
+  const articleSchema = post ? {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Organization',
+      name: 'Antigravity Skills',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Antigravity Skills',
+      url: 'https://www.antigravityskills.org',
+    },
+    mainEntityOfPage: `https://www.antigravityskills.org/blog/${slug}`,
+    keywords: post.tags.join(', '),
+    description: 'Security-reviewed AI skills, installation guidance, and workflow comparisons for Claude Code, Cursor, Gemini, and Antigravity.',
+  } : null;
 
   if (!post) {
     return (
@@ -412,6 +432,11 @@ The best skills come from solving your own problems.`,
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+      {articleSchema && (
+        <Script id={`blog-schema-${slug}`} type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </Script>
+      )}
       <Link href="/blog" className="text-blue-600 hover:underline mb-8 inline-block">
         ← Back to blog
       </Link>
@@ -443,6 +468,66 @@ The best skills come from solving your own problems.`,
       </article>
 
       <footer className="mt-12 pt-8 border-t">
+        <section className="mb-8">
+          <h2 className="text-lg font-bold mb-4">Related Skills & Topics</h2>
+          <div className="flex flex-wrap gap-3">
+            {slug === 'best-ai-memory-skills-for-claude-code' && (
+              <>
+                <Link href="/skill/everything-claude-code" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Everything Claude Code
+                </Link>
+                <Link href="/skill/openviking" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  OpenViking
+                </Link>
+                <Link href="/skill/memos" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  MemOS
+                </Link>
+                <Link href="/skill/cipher-memory" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Cipher Memory
+                </Link>
+                <Link href="/tag/memory" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  #memory
+                </Link>
+                <Link href="/category/agents" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Agents category
+                </Link>
+              </>
+            )}
+            {slug === 'what-are-ai-agent-skills' && (
+              <>
+                <Link href="/skill/agent-manager-skill" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Agent Manager
+                </Link>
+                <Link href="/skill/browser-automation" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Browser Automation
+                </Link>
+                <Link href="/skill/systematic-debugging" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Systematic Debugging
+                </Link>
+                <Link href="/category/agents" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Agents category
+                </Link>
+                <Link href="/tag/ai" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  #ai
+                </Link>
+              </>
+            )}
+            {(slug === '5-skills-10x-productivity' || slug === 'create-your-first-skill') && (
+              <>
+                <Link href="/categories" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Browse all categories
+                </Link>
+                <Link href="/tags" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Browse all tags
+                </Link>
+                <Link href="/use-cases" className="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5">
+                  Explore use cases
+                </Link>
+              </>
+            )}
+          </div>
+        </section>
+
         <p className="text-gray-500 mb-4">Share this article:</p>
         <div className="flex gap-4">
           <a

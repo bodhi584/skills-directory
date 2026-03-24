@@ -45,7 +45,7 @@ export default function TagsPage() {
                     {sortedTags.map(([tag, count]) => (
                         <Link
                             key={tag}
-                            href={`/explore?tag=${encodeURIComponent(tag)}`}
+                            href={`/tag/${tag}`}
                             className="group px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#c26148] hover:bg-[#c26148]/5 transition-all flex items-center gap-2 bg-white dark:bg-gray-900"
                         >
                             <span className="text-gray-400 group-hover:text-[#c26148]">#</span>

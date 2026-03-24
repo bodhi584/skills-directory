@@ -75,9 +75,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Antigravity Skills',
+    url: siteUrl,
+    description: `${totalSkills} security-reviewed AI skills with public previews and member-only install guides.`,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteUrl}/explore?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Antigravity Skills',
+    url: siteUrl,
+    description: 'Security-reviewed AI skills directory with member-gated install guides and review details.',
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors`}>
+        <Script id="website-schema" type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </Script>
+        <Script id="organization-schema" type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </Script>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-J56JCF02B1"

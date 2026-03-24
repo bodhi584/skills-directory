@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Script from 'next/script';
 import { auth } from '@/auth';
 import { getSkillBySlug, getAllSkillSlugs, initialSkills } from '@/lib/data';
 import CopyButton from '@/components/CopyButton';
@@ -162,9 +163,59 @@ export default async function SkillPage({ params }: PageProps) {
 
     const installCommands = getInstallCommands(skill);
     const isAntigravitySkill = skill.author_github?.includes('antigravity-awesome-skills');
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: siteUrl,
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Skills',
+                item: `${siteUrl}/explore`,
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: skill.name,
+                item: `${siteUrl}/skill/${skill.slug}`,
+            },
+        ],
+    };
+    const skillSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: skill.name,
+        description: skill.publicPreview?.description || skill.description,
+        applicationCategory: skill.category,
+        operatingSystem: skill.platforms.join(', '),
+        keywords: skill.tags.join(', '),
+        url: `${siteUrl}/skill/${skill.slug}`,
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Antigravity Skills',
+            url: siteUrl,
+        },
+    };
 
     return (
         <div className="min-h-screen py-16 bg-white dark:bg-[#0f0f0f] transition-colors">
+            <Script id={`skill-breadcrumb-schema-${skill.slug}`} type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema)}
+            </Script>
+            <Script id={`skill-schema-${skill.slug}`} type="application/ld+json">
+                {JSON.stringify(skillSchema)}
+            </Script>
             <div className="max-w-3xl mx-auto px-6">
                 {/* Breadcrumb */}
                 <nav className="mb-8 text-sm">
@@ -235,7 +286,7 @@ export default async function SkillPage({ params }: PageProps) {
                         {skill.tags.slice(0, 5).map((tag) => (
                             <Link
                                 key={tag}
-                                href={`/explore?tag=${encodeURIComponent(tag)}`}
+                                href={`/tag/${tag}`}
                                 className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs hover:bg-gray-200"
                             >
                                 # {tag}
@@ -523,7 +574,7 @@ export default async function SkillPage({ params }: PageProps) {
                         {skill.tags.map(tag => (
                             <Link
                                 key={tag}
-                                href={`/explore?q=${tag}`}
+                                href={`/tag/${tag}`}
                                 className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 text-sm border border-gray-100 hover:border-gray-200 transition-colors"
                             >
                                 #{tag}
