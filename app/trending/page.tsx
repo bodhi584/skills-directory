@@ -143,6 +143,10 @@ export default function TrendingPage() {
           </p>
           <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
             Green <span className="font-medium text-emerald-600 dark:text-emerald-400">Published</span> labels indicate items already promoted into the site catalog.
+            Unlabeled items are still trend candidates and have not yet been promoted as formal site entries.
+          </p>
+          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            Trend visibility does not imply security review. Only items explicitly surfaced in reviewed site sections count as security-reviewed skills.
           </p>
         </div>
 
