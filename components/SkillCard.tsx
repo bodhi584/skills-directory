@@ -47,9 +47,13 @@ export default function SkillCard({ skill }: SkillCardProps) {
             </p>
 
             <div className="flex flex-wrap gap-2 mb-4">
-                {skill.verified && (
+                {skill.verified ? (
                     <span className="px-2 py-0.5 text-xs rounded-full bg-green-50 text-green-700 border border-green-100">
                         Security Reviewed
+                    </span>
+                ) : (
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-amber-50 text-amber-700 border border-amber-100">
+                        Pending Review
                     </span>
                 )}
                 {skill.memberOnly && (

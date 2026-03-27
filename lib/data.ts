@@ -710,8 +710,12 @@ export const initialSkills: Skill[] = rawSkills.map(skill => ({
 }));
 
 // 数据操作函数
+function isReviewedSkill(skill: Skill): boolean {
+    return skill.reviewStatus === 'reviewed';
+}
+
 export function getSkills(params: SearchParams = {}): SkillsResponse {
-    let filtered = [...initialSkills];
+    let filtered = [...initialSkills].filter(isReviewedSkill);
 
     if (params.query) {
         const q = params.query.toLowerCase();
@@ -769,17 +773,23 @@ export function getAllSkillSlugs(): string[] {
 }
 
 export function getFeaturedSkills(): Skill[] {
-    return [...initialSkills].sort((a, b) => b.stars - a.stars).slice(0, 6);
+    return [...initialSkills]
+        .filter(isReviewedSkill)
+        .sort((a, b) => b.stars - a.stars)
+        .slice(0, 6);
 }
 
 export function getLatestSkills(): Skill[] {
-    return [...initialSkills].sort((a, b) => b.id - a.id).slice(0, 6);
+    return [...initialSkills]
+        .filter(isReviewedSkill)
+        .sort((a, b) => b.id - a.id)
+        .slice(0, 6);
 }
 
 export function getCategoriesWithCount(): Category[] {
     return categories.map(cat => ({
         ...cat,
-        count: initialSkills.filter(s => s.category === cat.slug).length,
+        count: initialSkills.filter(s => s.category === cat.slug && isReviewedSkill(s)).length,
     }));
 }
 
@@ -809,7 +819,10 @@ export function getRelatedSkills(currentSkill: Skill, limit: number = 3): Skill[
 
 // 获取热门技能
 export function getPopularSkills(limit: number = 6): Skill[] {
-    return [...initialSkills].sort((a, b) => b.stars - a.stars).slice(0, limit);
+    return [...initialSkills]
+        .filter(isReviewedSkill)
+        .sort((a, b) => b.stars - a.stars)
+        .slice(0, limit);
 }
 
 // Tag helpers for SEO tag pages
