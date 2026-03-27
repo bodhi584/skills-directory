@@ -115,6 +115,9 @@ export default function Home() {
             <Link href="/" className="px-4 py-3 border-b-2 border-[#c26148] text-[#c26148] font-medium text-sm">
               🔥 Today
             </Link>
+            <Link href="/trending" className="px-4 py-3 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white text-sm">
+              📈 Trending
+            </Link>
             <Link href="/explore?sort=featured" className="px-4 py-3 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white text-sm">
               ⭐ Featured
             </Link>

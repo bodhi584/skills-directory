@@ -64,3 +64,37 @@ export interface SearchParams {
   page?: number;
   pageSize?: number;
 }
+
+// Trending data types
+export interface TrendingRepo {
+  source: string;
+  category: string;
+  id: string;
+  name: string;
+  full_name: string;
+  description: string;
+  url: string;
+  stars: number;
+  topics: string[];
+  language: string;
+  created_at: string;
+  updated_at: string;
+  owner: string;
+  owner_avatar: string;
+}
+
+export interface TrendingDataset {
+  generated_at: string;
+  summary: {
+    total: number;
+    trending: number;
+    latest: number;
+    essential: number;
+    clawhub: number;
+  };
+  categories: {
+    trending: TrendingRepo[];
+    latest: TrendingRepo[];
+    essential: TrendingRepo[];
+  };
+}
